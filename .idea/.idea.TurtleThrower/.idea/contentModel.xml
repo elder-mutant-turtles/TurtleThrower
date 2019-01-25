@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets/CharacterController2D.cs" t="Include" />
       <e p="Assets/CharacterInput.cs" t="Include" />
+      <e p="Assets/Editor" t="Include">
+        <e p="InputEditor.cs" t="Include" />
+      </e>
+      <e p="Assets/InputDebugger.cs" t="Include" />
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
@@ -12,6 +18,6 @@
       </e>
       <e p="TurtleThrower.sln" t="IncludeFlat" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_TurtleThrower.-77285509.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_TurtleThrower.-992136136.00" t="ExcludeRecursive" />
   </component>
 </project>

@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class CharacterInput : MonoBehaviour
 {
-	public Rigidbody2D rg;
 
-	// Use this for initialization
-	void Start () {
-			
-	}
+	public CharacterController2D controller;
 	
 	// Update is called once per frame
-	void Update () {
-	
-		Input.GetButtonDown()
-		
+	private void FixedUpdate()
+	{
+		var hAxis = Input.GetAxis("j1axis1");
+
+		controller.Move(hAxis);
+
+		if (Input.GetButtonDown("j1a0"))
+		{
+			controller.Jump();
+		}
 	}
 }
