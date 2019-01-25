@@ -14,8 +14,8 @@
       <file leaf-file-name="InputEditor.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Editor/InputEditor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1698">
-              <caret line="146" column="27" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="44" />
+            <state relative-caret-position="300">
+              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
               <folding>
                 <marker date="1548450842724" expanded="true" signature="6:37" ph="..." />
                 <marker date="1548450842724" expanded="true" signature="53:120" ph="{...}" />
@@ -70,13 +70,16 @@
       <file leaf-file-name="CharacterController2D.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/CharacterController2D.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="310">
+              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
               <folding>
-                <marker date="1548452263252" expanded="false" signature="6:78" ph="..." />
-                <marker date="1548452263252" expanded="true" signature="130:322" ph="{...}" />
-                <marker date="1548452263252" expanded="true" signature="196:253" ph="{...}" />
-                <marker date="1548452263252" expanded="true" signature="274:320" ph="{...}" />
+                <marker date="1548458111751" expanded="false" signature="6:105" ph="..." />
+                <marker date="1548458111751" expanded="true" signature="157:891" ph="{...}" />
+                <marker date="1548458111751" expanded="true" signature="404:547" ph="{...}" />
+                <marker date="1548458111751" expanded="true" signature="570:680" ph="{...}" />
+                <marker date="1548458111751" expanded="true" signature="712:785" ph="{...}" />
+                <marker date="1548458111751" expanded="true" signature="806:889" ph="{...}" />
+                <marker date="1548458111751" expanded="true" signature="829:886" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -85,17 +88,17 @@
       <file leaf-file-name="InputDebugger.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/InputDebugger.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+            <state relative-caret-position="255">
+              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
-                <marker date="1548451602354" expanded="true" signature="6:100" ph="..." />
-                <marker date="1548451602354" expanded="true" signature="144:594" ph="{...}" />
-                <marker date="1548451602354" expanded="true" signature="221:228" ph="{...}" />
-                <marker date="1548451602354" expanded="true" signature="283:592" ph="{...}" />
-                <marker date="1548451602354" expanded="true" signature="319:358" ph="{...}" />
-                <marker date="1548451602354" expanded="true" signature="396:435" ph="{...}" />
-                <marker date="1548451602354" expanded="true" signature="473:512" ph="{...}" />
-                <marker date="1548451602354" expanded="true" signature="550:589" ph="{...}" />
+                <marker date="1548457847328" expanded="true" signature="6:100" ph="..." />
+                <marker date="1548457847328" expanded="true" signature="144:598" ph="{...}" />
+                <marker date="1548457847328" expanded="true" signature="221:228" ph="{...}" />
+                <marker date="1548457847328" expanded="true" signature="287:596" ph="{...}" />
+                <marker date="1548457847328" expanded="true" signature="323:362" ph="{...}" />
+                <marker date="1548457847328" expanded="true" signature="400:439" ph="{...}" />
+                <marker date="1548457847328" expanded="true" signature="477:516" ph="{...}" />
+                <marker date="1548457847328" expanded="true" signature="554:593" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -113,8 +116,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Editor/InputEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/InputDebugger.cs" />
         <option value="$PROJECT_DIR$/Assets/CharacterInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/InputDebugger.cs" />
         <option value="$PROJECT_DIR$/Assets/CharacterController2D.cs" />
       </list>
     </option>
@@ -172,9 +175,9 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="37211">
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="37211" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -187,12 +190,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548450787878</updated>
-      <workItem from="1548450789594" duration="1469000" />
+      <workItem from="1548450789594" duration="4737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1469000" />
+    <option name="totallyTimeSpent" value="4737000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -215,11 +218,11 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -239,11 +242,30 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CharacterController2D.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/CharacterController2D.cs" initialLine="22">
+            <startOffsets>
+              <startOffset value="513" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="544" />
+            </endOffsets>
+          </properties>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Editor/InputEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1698">
-          <caret line="146" column="27" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="44" />
+        <state relative-caret-position="300">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
             <marker date="1548450842724" expanded="true" signature="6:37" ph="..." />
             <marker date="1548450842724" expanded="true" signature="53:120" ph="{...}" />
@@ -281,17 +303,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/InputDebugger.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        <state relative-caret-position="255">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding>
-            <marker date="1548451602354" expanded="true" signature="6:100" ph="..." />
-            <marker date="1548451602354" expanded="true" signature="144:594" ph="{...}" />
-            <marker date="1548451602354" expanded="true" signature="221:228" ph="{...}" />
-            <marker date="1548451602354" expanded="true" signature="283:592" ph="{...}" />
-            <marker date="1548451602354" expanded="true" signature="319:358" ph="{...}" />
-            <marker date="1548451602354" expanded="true" signature="396:435" ph="{...}" />
-            <marker date="1548451602354" expanded="true" signature="473:512" ph="{...}" />
-            <marker date="1548451602354" expanded="true" signature="550:589" ph="{...}" />
+            <marker date="1548457847328" expanded="true" signature="6:100" ph="..." />
+            <marker date="1548457847328" expanded="true" signature="144:598" ph="{...}" />
+            <marker date="1548457847328" expanded="true" signature="221:228" ph="{...}" />
+            <marker date="1548457847328" expanded="true" signature="287:596" ph="{...}" />
+            <marker date="1548457847328" expanded="true" signature="323:362" ph="{...}" />
+            <marker date="1548457847328" expanded="true" signature="400:439" ph="{...}" />
+            <marker date="1548457847328" expanded="true" signature="477:516" ph="{...}" />
+            <marker date="1548457847328" expanded="true" signature="554:593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -311,13 +333,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CharacterController2D.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="310">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
           <folding>
-            <marker date="1548452263252" expanded="false" signature="6:78" ph="..." />
-            <marker date="1548452263252" expanded="true" signature="130:322" ph="{...}" />
-            <marker date="1548452263252" expanded="true" signature="196:253" ph="{...}" />
-            <marker date="1548452263252" expanded="true" signature="274:320" ph="{...}" />
+            <marker date="1548458111751" expanded="false" signature="6:105" ph="..." />
+            <marker date="1548458111751" expanded="true" signature="157:891" ph="{...}" />
+            <marker date="1548458111751" expanded="true" signature="404:547" ph="{...}" />
+            <marker date="1548458111751" expanded="true" signature="570:680" ph="{...}" />
+            <marker date="1548458111751" expanded="true" signature="712:785" ph="{...}" />
+            <marker date="1548458111751" expanded="true" signature="806:889" ph="{...}" />
+            <marker date="1548458111751" expanded="true" signature="829:886" ph="{...}" />
           </folding>
         </state>
       </provider>

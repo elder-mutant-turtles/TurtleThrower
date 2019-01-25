@@ -14,7 +14,7 @@ public class InputDebugger : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate() {
 		if (Input.GetButtonDown("j1a0"))
 		{
 			InputGot.text = "button 0";
