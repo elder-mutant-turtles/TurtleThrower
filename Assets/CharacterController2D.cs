@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using DG.Tweening;
 using TurtleThrower;
-using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
@@ -14,15 +12,22 @@ public class CharacterController2D : MonoBehaviour
 	[Header("Throw shell Config")]
 	public Vector3 DefaultThrowDirection;
 	public float DefaultThrowForce;
+
+	[Header("Animation")] 
+	public Animator Animator;
 	
 	private List<Interactable> interactables;
 	private ShellController shellController;
 	
-	public float ShellMovementScale = 1f;
-	public float JumpScale = 5f;
+	public float WalkVelocity = 1f;
+	public float JumpHeight = 5f;
+	public float Gravity = 3f;
+	public float MovementAcceleration = 5f;
 	
 	public Transform Foot;
 	public Rigidbody2D rigidBody;
+
+	private bool lifting;
 
 	private int groundMask;
 	private RaycastHit2D hit;
@@ -31,52 +36,81 @@ public class CharacterController2D : MonoBehaviour
 
 	private bool facingRight = true;
 
-	public bool IsGrounded()
-	{
-		var result = Physics2D.Raycast(transform.position, Foot.localPosition, footRayDistance, groundMask);
-		return result.collider != null;
-	}
+	private RaycastHit2D[] results;
 
-	private void Awake()
-	{
-		groundMask = 1 << LayerMask.NameToLayer("Ground");
+	private bool grounded;
 
-		footRayDistance = Foot.localPosition.magnitude;
-	}
+	private bool shellEquipped;
 	
-	private void Start()
-	{
-		interactables = new List<Interactable>();
-	}
+	Vector2 m_PreviousPosition;
+	Vector2 m_CurrentPosition;
+	Vector2 m_NextMovement;
+
+	private Vector2 m_Movement;
+	
+	public Vector2 Velocity { get; protected set; }
 
 	public void Move(float value)
 	{
-		rigidBody.velocity = Vector2.right * value * ShellMovementScale;
-		facingRight = value >= 0;
+		var scaledVelocity = value * WalkVelocity * (shellEquipped ? 0.5f : 1f);
+		
+		Animator.SetFloat("Velocity", Mathf.Abs(scaledVelocity));
+		
+		m_Movement.x = Mathf.MoveTowards(m_Movement.x, scaledVelocity, MovementAcceleration * Time.deltaTime);
+
+		var direction = value > 0;
+		if (Mathf.Abs(value) > 0.05)
+		{
+			facingRight = direction;
+			Flip(facingRight);
+		}
+	}
+
+	public void Move(Vector2 movement)
+	{
+		m_NextMovement += movement * Time.deltaTime;
+	}
+	
+	public bool IsLifting()
+	{
+		return lifting;
+	}
+
+	public bool ShellIsEquipped()
+	{
+		return shellEquipped;
+	}
+	
+	public bool IsGrounded()
+	{
+		var resultsCount = Physics2D.RaycastNonAlloc(transform.position, Vector3.down, results, footRayDistance, groundMask);
+		return resultsCount > 0;
 	}
 
 	public void Jump()
 	{
 		if (IsGrounded())
 		{
-			rigidBody.velocity = Vector2.up * JumpScale;
+			m_Movement.y = JumpHeight;
+			Animator.SetTrigger("Jump");
 		}
 	}
 
+	public void FinishThrowAnimation()
+	{
+		var throwDirection = DefaultThrowDirection;
+		throwDirection.x = facingRight ? throwDirection.x : throwDirection.x * -1;
+		shellController.ThrowShell(throwDirection, DefaultThrowForce);
+		shellController = null;
+		Lift(false);
+		shellEquipped = false;
+	}
+	
 	/// <summary>
 	/// Interact with nearable object. Can bem the shell, interrupt, item
 	/// </summary>
 	public void Interact()
-	{
-		// If holding a shell, ignore nearable interactables.
-		if (shellController)
-		{
-			shellController.ThrowShell(Vector3.Scale(DefaultThrowDirection, Vector3.right * (facingRight ? 1 : -1)), DefaultThrowForce);
-			shellController = null;
-			return;
-		}
-		
-		
+	{	
 		// Check proximity.
 		foreach (var interactable in interactables)
 		{
@@ -84,14 +118,44 @@ public class CharacterController2D : MonoBehaviour
 			var scInteractable = interactable.GetComponentInParent<ShellController>();
 			if (scInteractable)
 			{
-				scInteractable.SetAttachedToTurtle(DefaultShellPivot);
+				scInteractable.SetAttachedToTurtle(DefaultShellPivot, FinishEquipShell);
 				this.shellController = scInteractable;
 			}
 		}
 	}
+
+	public void Lift(bool lift)
+	{
+		Animator.SetBool("Lifting", lift);
+		lifting = lift;
+	}
+
+	public void Throw()
+	{
+		Animator.SetTrigger("Throw");
+	}
+
+	private void Flip(bool towardRight)
+	{
+		var currentScale = transform.localScale;
+		var isFacingRight = currentScale.x < 0;
+		currentScale.x = isFacingRight != towardRight ? -1 * currentScale.x : currentScale.x;
+		transform.localScale = currentScale;
+	}
 	
+	private void Awake()
+	{
+		groundMask = 1 << LayerMask.NameToLayer("Ground");
+
+		footRayDistance = Foot.localPosition.magnitude * transform.localScale.y;
+
+		results = new RaycastHit2D[1];
+	}
 	
-	
+	private void Start()
+	{
+		interactables = new List<Interactable>();
+	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -107,6 +171,11 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 	
+	private void FinishEquipShell()
+	{
+		shellEquipped = true;
+	}
+	
 	void OnTriggerExit2D(Collider2D other)
 	{
 		Interactable interactableExit = other.GetComponent<Interactable>();
@@ -116,5 +185,31 @@ public class CharacterController2D : MonoBehaviour
 			
 			Debug.Log(string.Format("[{0}] interactable far {1}", typeof(CharacterController2D), interactableExit.DebugInfo()));
 		}
+	}
+
+	private void ApplyGravity()
+	{
+		var increment = Gravity * Time.deltaTime;
+		m_NextMovement += Vector2.down * increment * Time.deltaTime;
+		m_Movement.y -= increment;
+	}
+	
+	private void FixedUpdate()
+	{
+		if (grounded != IsGrounded())
+		{
+			grounded = IsGrounded();
+			Animator.SetBool("Grounded", grounded);
+		}
+		
+		Move(m_Movement);
+		ApplyGravity();
+		
+		m_PreviousPosition = rigidBody.position;
+		m_CurrentPosition = m_PreviousPosition + m_NextMovement;
+		Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.deltaTime;
+
+		rigidBody.MovePosition(m_CurrentPosition);
+		m_NextMovement = Vector2.zero;
 	}
 }

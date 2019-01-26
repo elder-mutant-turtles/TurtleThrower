@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace TurtleThrower
     public class ShellController : MonoBehaviour
     {
 	    public Rigidbody2D rb;
-	    public PolygonCollider2D collider;
+	    public Collider2D collider;
 
 	    private bool physicEnabled = false;
 
@@ -64,17 +65,22 @@ namespace TurtleThrower
 	    /// <summary>
 	    /// When the shell is attached to turtle, rigidbody, colliders and physics must be disabled.
 	    /// </summary>
-	    public void SetAttachedToTurtle(Transform parentPivot)
+	    public void SetAttachedToTurtle(Transform parentPivot, TweenCallback finishEquipCallback)
 	    {
 		    physicEnabled = false;
 		    
 		    transform.SetParent(parentPivot);
 
+		    transform.localScale = Vector3.one;
+
 		    transform.DOLocalMove(Vector3.zero, 0.25f);
-		    transform.DOLocalRotate(Vector3.zero, 0.25f);
 
 		    rb.bodyType = RigidbodyType2D.Kinematic;
 		    rb.simulated = false;
+
+		    var reverseRotation = transform.DOLocalRotate(Vector3.zero, 0.3f);
+			reverseRotation.onComplete += finishEquipCallback;		
+			reverseRotation.Play();
 	    }
 	    
 	    
