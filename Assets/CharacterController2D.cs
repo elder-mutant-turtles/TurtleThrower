@@ -2,6 +2,7 @@
 using DG.Tweening;
 using TurtleThrower;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class CharacterController2D : MonoBehaviour
 	public float JumpHeight = 5f;
 	public float Gravity = 3f;
 	public float MovementAcceleration = 5f;
+
+	public Transform Shell;
 	
 	public Transform Foot;
 	public Rigidbody2D rigidBody;
@@ -127,6 +130,7 @@ public class CharacterController2D : MonoBehaviour
 	public void Lift(bool lift)
 	{
 		Animator.SetBool("Lifting", lift);
+		Animator.ResetTrigger("Throw");
 		lifting = lift;
 	}
 
@@ -175,7 +179,30 @@ public class CharacterController2D : MonoBehaviour
 	{
 		shellEquipped = true;
 	}
-	
+
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag.Equals("Deadly"))
+		{
+			Die();
+		}
+	}
+
+	private void Die()
+	{
+		Animator.SetTrigger("Die");
+		
+		transform.DOMove(Shell.position, 1.0f);
+		
+		Invoke("Respawn", 1.5f);
+	}
+
+	private void Respawn()
+	{
+		Animator.SetTrigger("Respawn");
+		
+	}
+
 	void OnTriggerExit2D(Collider2D other)
 	{
 		Interactable interactableExit = other.GetComponent<Interactable>();
@@ -200,6 +227,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			grounded = IsGrounded();
 			Animator.SetBool("Grounded", grounded);
+			Animator.ResetTrigger("Jump");
 		}
 		
 		Move(m_Movement);

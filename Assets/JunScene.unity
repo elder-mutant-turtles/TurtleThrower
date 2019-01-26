@@ -224,9 +224,23 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 185047217}
+    m_ColliderPaths:
+    - - X: 80000000
+        Y: -10000000
+      - X: -10000000
+        Y: -10000000
+      - X: -10000000
+        Y: -30000000
+      - X: 80000000
+        Y: -30000000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 8, y: -1}
+      - {x: -1, y: -1}
+      - {x: -1, y: -3}
+      - {x: 8, y: -3}
   m_VertexDistance: 0.0005
 --- !u!50 &185047216
 Rigidbody2D:
@@ -259,7 +273,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
 --- !u!483693784 &185047218
 TilemapRenderer:
@@ -839,6 +853,11 @@ Prefab:
       propertyPath: m_Name
       value: Turtle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114837036010989968, guid: 471b07fdd380ace4ebccfac5820883a7,
+        type: 2}
+      propertyPath: Shell
+      value: 
+      objectReference: {fileID: 1909571951}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 471b07fdd380ace4ebccfac5820883a7, type: 2}
   m_IsPrefabParent: 0
@@ -953,6 +972,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8431493e160268f4c96f3f17967bc53c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1486434182
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4844704322564836, guid: d83be7acfd8174094882465655eed546, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.141
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844704322564836, guid: d83be7acfd8174094882465655eed546, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.44200003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844704322564836, guid: d83be7acfd8174094882465655eed546, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844704322564836, guid: d83be7acfd8174094882465655eed546, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844704322564836, guid: d83be7acfd8174094882465655eed546, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844704322564836, guid: d83be7acfd8174094882465655eed546, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844704322564836, guid: d83be7acfd8174094882465655eed546, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844704322564836, guid: d83be7acfd8174094882465655eed546, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d83be7acfd8174094882465655eed546, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1813052860
 GameObject:
@@ -1124,6 +1185,11 @@ Transform:
 --- !u!58 &1909571947 stripped
 CircleCollider2D:
   m_PrefabParentObject: {fileID: 58665989679112032, guid: 8431493e160268f4c96f3f17967bc53c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1171241031}
+--- !u!4 &1909571951 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4348423726852014, guid: 8431493e160268f4c96f3f17967bc53c,
     type: 2}
   m_PrefabInternal: {fileID: 1171241031}
 --- !u!1 &2104686341
