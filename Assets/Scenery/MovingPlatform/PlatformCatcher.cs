@@ -23,8 +23,7 @@ namespace Gamekit2D
 
                 if (character != null)
                 {
-                    var diff = (rigidbody.position - movement).magnitude;
-                    character.Move(diff);
+                    character.Move2(movement);
                 }
                 else
                     rigidbody.MovePosition(rigidbody.position + movement);
