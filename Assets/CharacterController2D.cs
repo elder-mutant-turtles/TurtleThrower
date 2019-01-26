@@ -29,7 +29,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private bool lifting;
 
-	private int groundMask;
+	public LayerMask groundMask;
 	private RaycastHit2D hit;
 
 	private float footRayDistance = 0f;
@@ -55,9 +55,9 @@ public class CharacterController2D : MonoBehaviour
 		var scaledVelocity = value * WalkVelocity * (shellEquipped ? 0.5f : 1f);
 		
 		Animator.SetFloat("Velocity", Mathf.Abs(scaledVelocity));
-		
-		m_Movement.x = Mathf.MoveTowards(m_Movement.x, scaledVelocity, MovementAcceleration * Time.deltaTime);
 
+		m_Movement.x = Mathf.MoveTowards(m_Movement.x, scaledVelocity, MovementAcceleration * Time.deltaTime);	
+		
 		var direction = value > 0;
 		if (Mathf.Abs(value) > 0.05)
 		{
@@ -65,7 +65,13 @@ public class CharacterController2D : MonoBehaviour
 			Flip(facingRight);
 		}
 	}
+	
+	
 
+	/// <summary>
+	/// Apply movement vector to next physic step.
+	/// </summary>
+	/// <param name="movement"></param>
 	public void Move(Vector2 movement)
 	{
 		m_NextMovement += movement * Time.deltaTime;
@@ -145,8 +151,6 @@ public class CharacterController2D : MonoBehaviour
 	
 	private void Awake()
 	{
-		groundMask = 1 << LayerMask.NameToLayer("Ground");
-
 		footRayDistance = Foot.localPosition.magnitude * transform.localScale.y;
 
 		results = new RaycastHit2D[1];
@@ -189,21 +193,26 @@ public class CharacterController2D : MonoBehaviour
 
 	private void ApplyGravity()
 	{
+		if (IsGrounded())
+		{
+			return;
+		}
 		var increment = Gravity * Time.deltaTime;
-		m_NextMovement += Vector2.down * increment * Time.deltaTime;
-		m_Movement.y -= increment;
+		m_Movement += Vector2.down * increment;
 	}
 	
 	private void FixedUpdate()
 	{
-		if (grounded != IsGrounded())
+		var nowGrounded = IsGrounded();
+		if (grounded != nowGrounded)
 		{
-			grounded = IsGrounded();
+			grounded = nowGrounded;
 			Animator.SetBool("Grounded", grounded);
 		}
 		
-		Move(m_Movement);
 		ApplyGravity();
+		
+		Move(m_Movement);
 		
 		m_PreviousPosition = rigidBody.position;
 		m_CurrentPosition = m_PreviousPosition + m_NextMovement;
