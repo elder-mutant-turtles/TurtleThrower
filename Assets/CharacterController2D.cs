@@ -29,6 +29,8 @@ public class CharacterController2D : MonoBehaviour
 
 	private float footRayDistance = 0f;
 
+	private bool facingRight = true;
+
 	public bool IsGrounded()
 	{
 		var result = Physics2D.Raycast(transform.position, Foot.localPosition, footRayDistance, groundMask);
@@ -50,6 +52,7 @@ public class CharacterController2D : MonoBehaviour
 	public void Move(float value)
 	{
 		rigidBody.velocity = Vector2.right * value * ShellMovementScale;
+		facingRight = value >= 0;
 	}
 
 	public void Jump()
@@ -68,7 +71,7 @@ public class CharacterController2D : MonoBehaviour
 		// If holding a shell, ignore nearable interactables.
 		if (shellController)
 		{
-			shellController.ThrowShell(DefaultThrowDirection, DefaultThrowForce);
+			shellController.ThrowShell(Vector3.Scale(DefaultThrowDirection, Vector3.right * (facingRight ? 1 : -1)), DefaultThrowForce);
 			shellController = null;
 			return;
 		}

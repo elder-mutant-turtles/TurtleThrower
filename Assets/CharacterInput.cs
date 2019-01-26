@@ -6,22 +6,33 @@ public class CharacterInput : MonoBehaviour
 {
 
 	public CharacterController2D controller;
+
+	private bool jump; 
 	
 	// Update is called once per frame
-	private void FixedUpdate()
+	private void Update()
 	{
-		var hAxis = Input.GetAxis("j1axis1");
-
-		controller.Move(hAxis);
-
 		if (Input.GetButtonDown("j1a0"))
 		{
-			controller.Jump();
+			jump = true;
 		}
 
 		if (Input.GetButtonDown("j1a1"))
 		{
 			controller.Interact();
+		}
+	}
+
+	private void FixedUpdate()
+	{
+		var hAxis = Input.GetAxis("j1axis1");
+
+		controller.Move(hAxis);
+		
+		if (jump)
+		{
+			controller.Jump();
+			jump = false;
 		}
 	}
 }

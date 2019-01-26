@@ -757,8 +757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultShellPivot: {fileID: 357124390}
   ThrowShellPivot: {fileID: 357124390}
-  DefaultThrowDirection: {x: 1, y: 1, z: 0}
-  DefaultThrowForce: 5
+  DefaultThrowDirection: {x: 0.45, y: 1, z: 0}
+  DefaultThrowForce: 6
   ShellMovementScale: 1
   JumpScale: 15
   Foot: {fileID: 808453669}
