@@ -18,5 +18,10 @@ public class CharacterInput : MonoBehaviour
 		{
 			controller.Jump();
 		}
+
+		if (Input.GetButtonDown("j1a1"))
+		{
+			controller.Interact();
+		}
 	}
 }

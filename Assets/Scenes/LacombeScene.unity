@@ -462,6 +462,34 @@ Transform:
   m_Father: {fileID: 1220013924}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &845251770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 845251771}
+  m_Layer: 8
+  m_Name: ShellPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &845251771
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 845251770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.129, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1220013924}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &944419693
 Prefab:
   m_ObjectHideFlags: 0
@@ -500,6 +528,16 @@ Prefab:
     - target: {fileID: 4348423726852014, guid: 8431493e160268f4c96f3f17967bc53c, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50231673893375148, guid: 8431493e160268f4c96f3f17967bc53c,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50231673893375148, guid: 8431493e160268f4c96f3f17967bc53c,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8431493e160268f4c96f3f17967bc53c, type: 2}
@@ -614,6 +652,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 808453669}
+  - {fileID: 845251771}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -640,13 +679,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6634c4d2774d64d2b8b1d638cb4b3f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultShellPivot: {fileID: 0}
-  ThrowShellPivot: {fileID: 0}
-  DefaultThrowDirection: {x: 0, y: 0, z: 0}
-  DefaultThrowForce: 0
+  DefaultShellPivot: {fileID: 845251771}
+  ThrowShellPivot: {fileID: 845251771}
+  DefaultThrowDirection: {x: 0.45, y: 1, z: 0}
+  DefaultThrowForce: 6
   ShellMovementScale: 1
   JumpScale: 5
-  Foot: {fileID: 0}
+  Foot: {fileID: 808453669}
   rigidBody: {fileID: 1220013921}
 --- !u!1 &1813052860
 GameObject:

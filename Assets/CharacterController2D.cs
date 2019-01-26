@@ -1,11 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TurtleThrower;
+using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
 {
-
+	[Header("Pivots")]
+	public Transform DefaultShellPivot;
+	public Transform ThrowShellPivot;
+	
+	[Header("Throw shell Config")]
+	public Vector3 DefaultThrowDirection;
+	public float DefaultThrowForce;
+	
+	private List<Interactable> interactables;
+	private ShellController shellController;
+	
 	public float ShellMovementScale = 1f;
 	public float JumpScale = 5f;
 	
@@ -29,6 +41,11 @@ public class CharacterController2D : MonoBehaviour
 
 		footRayDistance = Foot.localPosition.magnitude;
 	}
+	
+	private void Start()
+	{
+		interactables = new List<Interactable>();
+	}
 
 	public void Move(float value)
 	{
@@ -39,7 +56,61 @@ public class CharacterController2D : MonoBehaviour
 	{
 		if (IsGrounded())
 		{
-			rigidBody.velocity = Vector2.up * JumpScale;	
+			rigidBody.velocity = Vector2.up * JumpScale;
+		}
+	}
+
+	/// <summary>
+	/// Interact with nearable object. Can bem the shell, interrupt, item
+	/// </summary>
+	public void Interact()
+	{
+		// If holding a shell, ignore nearable interactables.
+		if (shellController)
+		{
+			shellController.ThrowShell(DefaultThrowDirection, DefaultThrowForce);
+			shellController = null;
+			return;
+		}
+		
+		
+		// Check proximity.
+		foreach (var interactable in interactables)
+		{
+			interactable.Interact();
+			var scInteractable = interactable.GetComponentInParent<ShellController>();
+			if (scInteractable)
+			{
+				scInteractable.SetAttachedToTurtle(DefaultShellPivot);
+				this.shellController = scInteractable;
+			}
+		}
+	}
+	
+	
+	
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		Interactable interactableEnter = other.GetComponent<Interactable>();
+		if (interactableEnter != null)
+		{
+			if (interactables.Contains(interactableEnter))
+			{
+				return;
+			}
+			interactables.Add(interactableEnter);
+			Debug.Log(interactableEnter.DebugInfo());
+		}
+	}
+	
+	void OnTriggerExit2D(Collider2D other)
+	{
+		Interactable interactableExit = other.GetComponent<Interactable>();
+		if (interactableExit != null)
+		{
+			interactables.Remove(interactableExit);
+			Debug.Log(string.Format("OnTriggerExit {0}", interactableExit.DebugInfo()));
 		}
 	}
 }
