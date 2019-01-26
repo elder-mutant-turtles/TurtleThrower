@@ -70,7 +70,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CharacterController2D.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CharacterController2D.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CharacterController2D.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="411">
@@ -94,6 +94,27 @@
                 <marker date="1548470076938" expanded="true" signature="2277:2299" ph="{...}" />
                 <marker date="1548470076938" expanded="true" signature="2434:2673" ph="{...}" />
                 <marker date="1548470076938" expanded="true" signature="2539:2670" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShellController.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/ShellController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+              <folding>
+                <marker date="1548501507564" expanded="false" signature="6:78" ph="..." />
+                <marker date="1548501507564" expanded="true" signature="103:1568" ph="{...}" />
+                <marker date="1548501507564" expanded="true" signature="242:1565" ph="{...}" />
+                <marker date="1548501507564" expanded="true" signature="450:724" ph="{...}" />
+                <marker date="1548501507564" expanded="true" signature="647:710" ph="{...}" />
+                <marker date="1548501507564" expanded="true" signature="757:816" ph="{...}" />
+                <marker date="1548501507564" expanded="true" signature="787:809" ph="{...}" />
+                <marker date="1548501507564" expanded="true" signature="889:1130" ph="{...}" />
+                <marker date="1548501507564" expanded="true" signature="1138:1269" ph="/// When the shell is attached to turtle, rigidbody, colliders and physics must be disabled. ... " />
+                <marker date="1548501507564" expanded="true" signature="1329:1541" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -125,6 +146,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/InputDebugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/InputEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CharacterInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ShellController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -133,6 +155,7 @@
         <option value="$PROJECT_DIR$/Assets/InputDebugger.cs" />
         <option value="$PROJECT_DIR$/Assets/CharacterInput.cs" />
         <option value="$PROJECT_DIR$/Assets/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/ShellController.cs" />
       </list>
     </option>
   </component>
@@ -204,12 +227,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548450787878</updated>
-      <workItem from="1548450789594" duration="8764000" />
+      <workItem from="1548450789594" duration="9368000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8764000" />
+    <option name="totallyTimeSpent" value="9368000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,6 +380,25 @@
             <marker date="1548470076938" expanded="true" signature="2277:2299" ph="{...}" />
             <marker date="1548470076938" expanded="true" signature="2434:2673" ph="{...}" />
             <marker date="1548470076938" expanded="true" signature="2539:2670" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ShellController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <marker date="1548501507564" expanded="false" signature="6:78" ph="..." />
+            <marker date="1548501507564" expanded="true" signature="103:1568" ph="{...}" />
+            <marker date="1548501507564" expanded="true" signature="242:1565" ph="{...}" />
+            <marker date="1548501507564" expanded="true" signature="450:724" ph="{...}" />
+            <marker date="1548501507564" expanded="true" signature="647:710" ph="{...}" />
+            <marker date="1548501507564" expanded="true" signature="757:816" ph="{...}" />
+            <marker date="1548501507564" expanded="true" signature="787:809" ph="{...}" />
+            <marker date="1548501507564" expanded="true" signature="889:1130" ph="{...}" />
+            <marker date="1548501507564" expanded="true" signature="1138:1269" ph="/// When the shell is attached to turtle, rigidbody, colliders and physics must be disabled. ... " />
+            <marker date="1548501507564" expanded="true" signature="1329:1541" ph="{...}" />
           </folding>
         </state>
       </provider>
