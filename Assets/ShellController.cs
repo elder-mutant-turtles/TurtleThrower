@@ -36,10 +36,6 @@ namespace TurtleThrower
 			{
 				return;
 			}
-
-		    Velocity = (transform.position - lastPosition).magnitude;
-		    lastPosition = transform.position;
-		    
 	    }
 
 	    
@@ -51,9 +47,9 @@ namespace TurtleThrower
 		    transform.parent = null;
 		    
 		    rb.bodyType = RigidbodyType2D.Dynamic;
-
-		    //rb.AddForce(direction * force, ForceMode2D.Impulse);
+		    rb.simulated = true;
 		    rb.velocity = direction * force;
+		    rb.AddTorque(-0.01f, ForceMode2D.Impulse);
 	    }
 
 
@@ -65,10 +61,10 @@ namespace TurtleThrower
 		    physicEnabled = false;
 		    
 		    transform.SetParent(parentPivot);
+		    transform.localPosition = Vector3.zero;
 
 		    rb.bodyType = RigidbodyType2D.Kinematic;
-		    
-		    transform.localPosition = Vector3.zero;
+		    rb.simulated = false;
 	    }
 	    
 	    
