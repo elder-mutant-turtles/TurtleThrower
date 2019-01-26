@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using TurtleThrower;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
 {
-	public Rigidbody2D rigidBody;
-
+	[Header("Pivots")]
 	public Transform DefaultShellPivot;
 	public Transform ThrowShellPivot;
 	
@@ -15,23 +15,51 @@ public class CharacterController2D : MonoBehaviour
 	public Vector3 DefaultThrowDirection;
 	public float DefaultThrowForce;
 	
-	
 	private List<Interactable> interactables;
-
 	private ShellController shellController;
 	
+	public float ShellMovementScale = 1f;
+	public float JumpScale = 5f;
 	
+	public Transform Foot;
+	public Rigidbody2D rigidBody;
+
+	private int groundMask;
+	private RaycastHit2D hit;
+
+	private float footRayDistance = 0f;
+
+	public bool IsGrounded()
+	{
+		var result = Physics2D.Raycast(transform.position, Foot.localPosition, footRayDistance, groundMask);
+		return result.collider != null;
+	}
+
+	private void Awake()
+	{
+		groundMask = 1 << LayerMask.NameToLayer("Ground");
+
+		footRayDistance = Foot.localPosition.magnitude;
+	}
+	
+	private void Start()
+	{
+		interactables = new List<Interactable>();
+	}
+
 	public void Move(float value)
 	{
-		rigidBody.velocity = Vector2.right * value * 10;
+		rigidBody.velocity = Vector2.right * value * ShellMovementScale;
 	}
 
 	public void Jump()
 	{
-		rigidBody.AddForce(Vector2.up * 300);
+		if (IsGrounded())
+		{
+			rigidBody.velocity = Vector2.up * JumpScale;
+		}
 	}
 
-	
 	/// <summary>
 	/// Interact with nearable object. Can bem the shell, interrupt, item
 	/// </summary>
@@ -59,10 +87,7 @@ public class CharacterController2D : MonoBehaviour
 	}
 	
 	
-	private void Start()
-	{
-		interactables = new List<Interactable>();
-	}
+	
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
