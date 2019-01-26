@@ -2,20 +2,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TurtleThrower
 {
-
+    [RequireComponent(typeof(Collider2D))]
     public class PresenceTrigger : MonoBehaviour
     {
+        public LayerMask layers;
         public Collider2D trigger;
         
-        public event Action OnEnter;
-        public event Action OnExit;
+        public UnityEvent OnEnter;
+        public UnityEvent OnExit;
 
         public bool Turtle;
         public bool Shell;
 
+        void Reset()
+        {
+            layers = LayerMask.NameToLayer("Everything");
+        }
+        
         private void Awake()
         {
             if (trigger == null)
@@ -24,13 +31,8 @@ namespace TurtleThrower
             }
         }
         
-        private void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerEnter2D(Collider2D other)
         {
-            if (OnEnter == null)
-            {
-                return;
-            }
-
             bool dispatchOnEnter = false;
             
             CharacterController2D turtleController2D = other.GetComponent<CharacterController2D>();
@@ -47,17 +49,12 @@ namespace TurtleThrower
 
             if (dispatchOnEnter)
             {
-                OnEnter.Invoke();
+                ExecuteOnEnter(other);
             }
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        void OnTriggerExit2D(Collider2D other)
         {
-            if (OnExit == null)
-            {
-                return;
-            }
-            
             bool shouldExit = false;
             
             CharacterController2D turtleController2D = other.GetComponent<CharacterController2D>();
@@ -74,8 +71,18 @@ namespace TurtleThrower
 
             if (shouldExit)
             {
-                OnExit.Invoke();
+                ExecuteOnExit(other);
             }
+        }
+        
+        protected virtual void ExecuteOnEnter(Collider2D other)
+        {
+            OnEnter.Invoke();
+        }
+
+        protected virtual void ExecuteOnExit(Collider2D other)
+        {
+            OnExit.Invoke();
         }
     }
 
