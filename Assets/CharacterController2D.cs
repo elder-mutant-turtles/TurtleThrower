@@ -69,8 +69,6 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 	
-	
-
 	/// <summary>
 	/// Apply movement vector to next physic step.
 	/// </summary>
@@ -78,6 +76,11 @@ public class CharacterController2D : MonoBehaviour
 	public void Move(Vector2 movement)
 	{
 		m_NextMovement += movement * Time.deltaTime;
+	}
+	
+	public void Move2(Vector2 movement)
+	{
+		m_NextMovement += movement;
 	}
 	
 	public bool IsLifting()
@@ -192,6 +195,22 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag.Equals("Deadly"))
+		{
+			Die();
+		}
+	}
+
+	/// <summary>
+	/// Called by other objects.
+	/// </summary>
+	public void Kill()
+	{
+		Die();
+	}
+
 	private void Die()
 	{
 		Animator.SetTrigger("Die");
@@ -204,7 +223,6 @@ public class CharacterController2D : MonoBehaviour
 	private void Respawn()
 	{
 		Animator.SetTrigger("Respawn");
-		
 	}
 
 	void OnTriggerExit2D(Collider2D other)
@@ -224,7 +242,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			return;
 		}
-		var increment = Gravity * Time.deltaTime;
+		var increment = Gravity * Time.fixedDeltaTime;
 		m_Movement += Vector2.down * increment;
 	}
 	
@@ -244,7 +262,7 @@ public class CharacterController2D : MonoBehaviour
 		
 		m_PreviousPosition = rigidBody.position;
 		m_CurrentPosition = m_PreviousPosition + m_NextMovement;
-		Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.deltaTime;
+		Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.fixedDeltaTime;
 
 		rigidBody.MovePosition(m_CurrentPosition);
 		m_NextMovement = Vector2.zero;
