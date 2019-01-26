@@ -21,13 +21,27 @@ public class CharacterInput : MonoBehaviour
 		{
 			controller.Interact();
 		}
+
+		if (controller.ShellIsEquipped() && Input.GetButtonDown("j1a1"))
+		{
+			controller.Lift(true);
+		} 
+		else if (controller.IsLifting() && Input.GetButtonUp("j1a1"))
+		{
+			controller.Lift(false);
+		}
+
+		if (controller.IsLifting() && Input.GetButtonDown("j1a5"))
+		{
+			controller.Throw();
+		}
 	}
 
 	private void FixedUpdate()
 	{
 		var hAxis = Input.GetAxis("j1axis1");
 
-		controller.Move(hAxis);
+		controller.Move(hAxis);	
 		
 		if (jump)
 		{

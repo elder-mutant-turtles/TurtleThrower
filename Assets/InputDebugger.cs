@@ -34,5 +34,15 @@ public class InputDebugger : MonoBehaviour
 		{
 			InputGot.text = "button 3";
 		}
+		
+		if (Input.GetButtonDown("j1a4"))
+		{
+			InputGot.text = "button 4";
+		}
+		
+		if (Input.GetButtonDown("j1a5"))
+		{
+			InputGot.text = "button 5";
+		}
 	}
 }
