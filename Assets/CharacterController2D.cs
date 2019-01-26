@@ -167,7 +167,7 @@ public class CharacterController2D : MonoBehaviour
 				return;
 			}
 			interactables.Add(interactableEnter);
-			Debug.Log(interactableEnter.DebugInfo());
+			Debug.Log(string.Format("[{0}] interactable near {1}", typeof(CharacterController2D), interactableEnter.DebugInfo()));
 		}
 	}
 	
@@ -182,7 +182,8 @@ public class CharacterController2D : MonoBehaviour
 		if (interactableExit != null)
 		{
 			interactables.Remove(interactableExit);
-			Debug.Log(string.Format("OnTriggerExit {0}", interactableExit.DebugInfo()));
+			
+			Debug.Log(string.Format("[{0}] interactable far {1}", typeof(CharacterController2D), interactableExit.DebugInfo()));
 		}
 	}
 
