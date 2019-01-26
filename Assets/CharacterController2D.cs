@@ -2,6 +2,7 @@
 using DG.Tweening;
 using TurtleThrower;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -23,13 +24,15 @@ public class CharacterController2D : MonoBehaviour
 	public float JumpHeight = 5f;
 	public float Gravity = 3f;
 	public float MovementAcceleration = 5f;
+
+	public Transform Shell;
 	
 	public Transform Foot;
 	public Rigidbody2D rigidBody;
 
 	private bool lifting;
 
-	private int groundMask;
+	public LayerMask groundMask;
 	private RaycastHit2D hit;
 
 	private float footRayDistance = 0f;
@@ -55,9 +58,9 @@ public class CharacterController2D : MonoBehaviour
 		var scaledVelocity = value * WalkVelocity * (shellEquipped ? 0.5f : 1f);
 		
 		Animator.SetFloat("Velocity", Mathf.Abs(scaledVelocity));
-		
-		m_Movement.x = Mathf.MoveTowards(m_Movement.x, scaledVelocity, MovementAcceleration * Time.deltaTime);
 
+		m_Movement.x = Mathf.MoveTowards(m_Movement.x, scaledVelocity, MovementAcceleration * Time.deltaTime);	
+		
 		var direction = value > 0;
 		if (Mathf.Abs(value) > 0.05)
 		{
@@ -65,7 +68,13 @@ public class CharacterController2D : MonoBehaviour
 			Flip(facingRight);
 		}
 	}
+	
+	
 
+	/// <summary>
+	/// Apply movement vector to next physic step.
+	/// </summary>
+	/// <param name="movement"></param>
 	public void Move(Vector2 movement)
 	{
 		m_NextMovement += movement * Time.deltaTime;
@@ -127,6 +136,7 @@ public class CharacterController2D : MonoBehaviour
 	public void Lift(bool lift)
 	{
 		Animator.SetBool("Lifting", lift);
+		Animator.ResetTrigger("Throw");
 		lifting = lift;
 	}
 
@@ -145,8 +155,6 @@ public class CharacterController2D : MonoBehaviour
 	
 	private void Awake()
 	{
-		groundMask = 1 << LayerMask.NameToLayer("Ground");
-
 		footRayDistance = Foot.localPosition.magnitude * transform.localScale.y;
 
 		results = new RaycastHit2D[1];
@@ -175,7 +183,30 @@ public class CharacterController2D : MonoBehaviour
 	{
 		shellEquipped = true;
 	}
-	
+
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag.Equals("Deadly"))
+		{
+			Die();
+		}
+	}
+
+	private void Die()
+	{
+		Animator.SetTrigger("Die");
+		
+		transform.DOMove(Shell.position, 1.0f);
+		
+		Invoke("Respawn", 1.5f);
+	}
+
+	private void Respawn()
+	{
+		Animator.SetTrigger("Respawn");
+		
+	}
+
 	void OnTriggerExit2D(Collider2D other)
 	{
 		Interactable interactableExit = other.GetComponent<Interactable>();
@@ -189,21 +220,27 @@ public class CharacterController2D : MonoBehaviour
 
 	private void ApplyGravity()
 	{
+		if (IsGrounded())
+		{
+			return;
+		}
 		var increment = Gravity * Time.deltaTime;
-		m_NextMovement += Vector2.down * increment * Time.deltaTime;
-		m_Movement.y -= increment;
+		m_Movement += Vector2.down * increment;
 	}
 	
 	private void FixedUpdate()
 	{
-		if (grounded != IsGrounded())
+		var nowGrounded = IsGrounded();
+		if (grounded != nowGrounded)
 		{
-			grounded = IsGrounded();
+			grounded = nowGrounded;
 			Animator.SetBool("Grounded", grounded);
+			Animator.ResetTrigger("Jump");
 		}
 		
-		Move(m_Movement);
 		ApplyGravity();
+		
+		Move(m_Movement);
 		
 		m_PreviousPosition = rigidBody.position;
 		m_CurrentPosition = m_PreviousPosition + m_NextMovement;

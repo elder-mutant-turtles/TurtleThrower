@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Deadly
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1942999331
+    locked: 0
+  - name: Midground
+    uniqueID: 2229435447
+    locked: 0
+  - name: Character
+    uniqueID: 747352819
+    locked: 0
+  - name: Ground
+    uniqueID: 2129876903
+    locked: 0
+  - name: Threats
+    uniqueID: 2455667905
+    locked: 0
+  - name: Foreground
+    uniqueID: 2537874977
     locked: 0

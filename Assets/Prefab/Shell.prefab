@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4996914064606208}
   - component: {fileID: 114030024678190216}
   - component: {fileID: 58386411130255530}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,9 +121,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.016703606, y: -0.20044565}
   serializedVersion: 2
-  m_Radius: 4.8
+  m_Radius: 3.2799459
 --- !u!114 &114030024678190216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 50231673893375148}
-  collider: {fileID: 0}
+  collider: {fileID: 58665989679112032}
   Velocity: 0
 --- !u!212 &212679139489530996
 SpriteRenderer:
@@ -181,9 +181,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 747352819
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ab0fe9cb660f88f45bc2a9bd9d7de70f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
