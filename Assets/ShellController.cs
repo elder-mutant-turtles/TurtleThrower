@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace TurtleThrower
@@ -19,13 +20,20 @@ namespace TurtleThrower
 	
 	    private void Awake()
 	    {
-		    rb = rb ?? GetComponent<Rigidbody2D>();
-		    collider = collider ?? GetComponent<PolygonCollider2D>();
-
-		    var interactable = GetComponent<Interactable>();
-		    if (interactable)
+		    if (rb == null)
 		    {
-			    GetComponentInChildren<Interactable>();
+			    rb = GetComponent<Rigidbody2D>();    
+		    }
+
+		    if (collider == null)
+		    {
+			    collider = GetComponent<PolygonCollider2D>();    
+		    }
+		    
+		    var interactable = GetComponent<Interactable>();
+		    if (interactable == null)
+		    {
+			    interactable = GetComponentInChildren<Interactable>();
 		    }
 		    
 	    }
@@ -61,7 +69,9 @@ namespace TurtleThrower
 		    physicEnabled = false;
 		    
 		    transform.SetParent(parentPivot);
-		    transform.localPosition = Vector3.zero;
+
+		    transform.DOLocalMove(Vector3.zero, 0.25f);
+		    transform.DOLocalRotate(Vector3.zero, 0.25f);
 
 		    rb.bodyType = RigidbodyType2D.Kinematic;
 		    rb.simulated = false;
