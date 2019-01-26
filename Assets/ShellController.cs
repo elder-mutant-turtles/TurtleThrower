@@ -6,7 +6,7 @@ namespace TurtleThrower
 {
 
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(PolygonCollider2D))]
+    [RequireComponent(typeof(Collider2D))]
     public class ShellController : MonoBehaviour
     {
 	    public Rigidbody2D rb;
