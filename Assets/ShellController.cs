@@ -13,7 +13,10 @@ namespace TurtleThrower
 	    public PolygonCollider2D collider;
 
 	    private bool physicEnabled = false;
-	    
+
+	    public float Velocity;
+	    private Vector3 lastPosition;
+	
 	    private void Awake()
 	    {
 		    rb = rb ?? GetComponent<Rigidbody2D>();
@@ -22,7 +25,7 @@ namespace TurtleThrower
 		    var interactable = GetComponent<Interactable>();
 		    if (interactable)
 		    {
-
+			    GetComponentInChildren<Interactable>();
 		    }
 		    
 	    }
@@ -33,19 +36,24 @@ namespace TurtleThrower
 			{
 				return;
 			}
-		    
+
+		    Velocity = (transform.position - lastPosition).magnitude;
+		    lastPosition = transform.position;
 		    
 	    }
 
+	    
+	    
 	    public void ThrowShell(Vector2 direction, float force)
 	    {
 		    physicEnabled = true;
-		    
-		    transform.SetParent(null, true);
+
+		    transform.parent = null;
 		    
 		    rb.bodyType = RigidbodyType2D.Dynamic;
 
-		    rb.AddForce(direction * force);
+		    //rb.AddForce(direction * force, ForceMode2D.Impulse);
+		    rb.velocity = direction * force;
 	    }
 
 

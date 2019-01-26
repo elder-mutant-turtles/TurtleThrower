@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 50231673893375148}
   - component: {fileID: 60598347855728908}
   - component: {fileID: 114085044172772942}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1290104033237120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.949, y: 0.138, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4996914064606208}
   m_Father: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4732a61045a870a429d1325a5ea81528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerCollider: {fileID: 0}
+  triggerCollider: {fileID: 58386411130255530}
 --- !u!114 &114085044172772942
 MonoBehaviour:
   m_ObjectHideFlags: 1

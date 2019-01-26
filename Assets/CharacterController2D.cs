@@ -70,6 +70,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			shellController.ThrowShell(DefaultThrowDirection, DefaultThrowForce);
 			shellController = null;
+			return;
 		}
 		
 		
