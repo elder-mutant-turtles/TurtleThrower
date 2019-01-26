@@ -936,6 +936,21 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 58665989679112032, guid: 8431493e160268f4c96f3f17967bc53c,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.20044565
+      objectReference: {fileID: 0}
+    - target: {fileID: 58665989679112032, guid: 8431493e160268f4c96f3f17967bc53c,
+        type: 2}
+      propertyPath: m_Radius
+      value: 3.2799459
+      objectReference: {fileID: 0}
+    - target: {fileID: 58665989679112032, guid: 8431493e160268f4c96f3f17967bc53c,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.016703606
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8431493e160268f4c96f3f17967bc53c, type: 2}
   m_IsPrefabParent: 0
