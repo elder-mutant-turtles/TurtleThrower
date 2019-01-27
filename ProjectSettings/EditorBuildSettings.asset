@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PaivaScene.unity
+    guid: 645d7b3462a2a1c42834e028b0388aab
+  - enabled: 1
+    path: Assets/Scenes/FinalLevel.unity
+    guid: 2463c8a69f9c9424793795c98e30ec77

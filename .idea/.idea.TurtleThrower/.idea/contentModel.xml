@@ -157,11 +157,14 @@
           <e p="readme.txt" t="Include" />
         </e>
       </e>
+      <e p="Assets/DoorBehaviour.cs" t="Include" />
       <e p="Assets/Editor" t="Include">
         <e p="InputEditor.cs" t="Include" />
       </e>
       <e p="Assets/InputDebugger.cs" t="Include" />
       <e p="Assets/Interactable.cs" t="Include" />
+      <e p="Assets/Inventory.cs" t="Include" />
+      <e p="Assets/KeyItem.cs" t="Include" />
       <e p="Assets/PresenceTrigger.cs" t="Include" />
       <e p="Assets/PressController.cs" t="Include" />
       <e p="Assets/Scenery" t="Include">
@@ -181,6 +184,17 @@
         <e p="Water.shader" t="Include" />
       </e>
       <e p="Assets/ShellController.cs" t="Include" />
+      <e p="Assets/SoundManager.cs" t="Include" />
+      <e p="Assets/Sprites" t="Include">
+        <e p="Threats" t="Include">
+          <e p="Animations" t="Include">
+            <e p="Saw" t="Include">
+              <e p="SawRotate.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Assets/TitleScreenScript.cs" t="Include" />
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />

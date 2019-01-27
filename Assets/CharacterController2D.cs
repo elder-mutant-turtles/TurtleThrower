@@ -55,6 +55,13 @@ public class CharacterController2D : MonoBehaviour
 
 	public Inventory inventory;
 
+	private bool isDead = false;
+
+	public bool IsDead()
+	{
+		return isDead;
+	}
+
 	public void Move(float value)
 	{
 		var scaledVelocity = value * WalkVelocity * (shellEquipped ? 0.5f : 1f);
@@ -138,10 +145,10 @@ public class CharacterController2D : MonoBehaviour
 				this.shellController = scInteractable;
 			}
 
-			var keyItem = interactable.GetComponent<KeyItem>();
-			if (keyItem)
+			var collectableItem = interactable.GetComponent<CollectableItem>();
+			if (collectableItem)
 			{
-				inventory.ItemTags.Add(keyItem.color.ToString());
+				inventory.Add(collectableItem);
 			}
 			
 			interactable.Interact();
@@ -193,6 +200,17 @@ public class CharacterController2D : MonoBehaviour
 		Interactable interactableEnter = other.GetComponent<Interactable>();
 		if (interactableEnter != null)
 		{
+			if (interactableEnter.Automatic)
+			{
+				var collectableItem = interactableEnter.GetComponent<CollectableItem>();
+				if (collectableItem)
+				{
+					inventory.Add(collectableItem);
+				}
+				interactableEnter.Interact();
+				return;
+			}
+			
 			if (interactables.Contains(interactableEnter))
 			{
 				return;
@@ -231,15 +249,30 @@ public class CharacterController2D : MonoBehaviour
 	private void Die()
 	{
 		Animator.SetTrigger("Die");
-		
-		transform.DOMove(Shell.position, 1.0f);
+
+		transform.DOScale(0, 1f);
 		
 		Invoke("Respawn", 1.5f);
+
+		isDead = true;
 	}
 
 	private void Respawn()
 	{
 		Animator.SetTrigger("Respawn");
+		
+		transform.DOMove(Shell.position, 1.0f).onComplete += FinishRespawn;
+	}
+
+	private void FinishRespawn()
+	{
+		isDead = false;
+
+		transform.DOScale(0.1f, 0.5f);
+		
+		var shellController = Shell.GetComponent<ShellController>();
+		shellController.SetAttachedToTurtle(DefaultShellPivot, FinishEquipShell);
+		this.shellController = shellController;
 	}
 
 	void OnTriggerExit2D(Collider2D other)
@@ -255,7 +288,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void ApplyGravity()
 	{
-		if (IsGrounded())
+		if (IsGrounded() || IsDead())
 		{
 			return;
 		}
@@ -283,5 +316,34 @@ public class CharacterController2D : MonoBehaviour
 
 		rigidBody.MovePosition(m_CurrentPosition);
 		m_NextMovement = Vector2.zero;
+	}
+
+
+	public bool CheckVictory()
+	{
+		if (shellController == null)
+		{
+			return false;
+		}
+
+		List<CollectableItem.ItemID> requiredList = new List<CollectableItem.ItemID>()
+		{
+			CollectableItem.ItemID.CollectableBottle,
+			CollectableItem.ItemID.CollectableCrocs,
+			CollectableItem.ItemID.CollectableFrame,
+			CollectableItem.ItemID.CollectableHat,
+			CollectableItem.ItemID.CollectableVhs
+		};
+
+		
+		foreach (var itemId in requiredList)
+		{
+			if (inventory.Contains(itemId) == false)
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 }
