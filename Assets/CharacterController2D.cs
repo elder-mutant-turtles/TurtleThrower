@@ -218,14 +218,6 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.gameObject.tag.Equals("Deadly"))
-		{
-			Die();
-		}
-	}
-
 	/// <summary>
 	/// Called by other objects.
 	/// </summary>
