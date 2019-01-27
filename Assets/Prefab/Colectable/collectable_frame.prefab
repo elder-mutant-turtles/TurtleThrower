@@ -22,6 +22,9 @@ GameObject:
   - component: {fileID: 212238504817812154}
   - component: {fileID: 95156921869321314}
   - component: {fileID: 122771232009068528}
+  - component: {fileID: 114658825303866974}
+  - component: {fileID: 114540835972317484}
+  - component: {fileID: 61370007927206292}
   m_Layer: 0
   m_Name: collectable_frame
   m_TagString: Untagged
@@ -37,11 +40,36 @@ Transform:
   m_GameObject: {fileID: 1555646567091954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61370007927206292
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1555646567091954}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.24, y: 5.24}
+    newSize: {x: 5.24, y: 5.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.07, y: 4.86}
+  m_EdgeRadius: 0
 --- !u!95 &95156921869321314
 Animator:
   serializedVersion: 3
@@ -59,6 +87,32 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114540835972317484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1555646567091954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bb4783daf4deb4983ab2a104de261c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 5
+  interactable: {fileID: 114658825303866974}
+--- !u!114 &114658825303866974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1555646567091954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4732a61045a870a429d1325a5ea81528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerCollider: {fileID: 61370007927206292}
+  Automatic: 1
 --- !u!122 &122771232009068528
 Halo:
   m_ObjectHideFlags: 1
@@ -69,7 +123,7 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4286611584
-  m_Size: 5
+  m_Size: 2
 --- !u!212 &212238504817812154
 SpriteRenderer:
   m_ObjectHideFlags: 1

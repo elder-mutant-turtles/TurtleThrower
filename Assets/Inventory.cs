@@ -5,8 +5,12 @@ namespace TurtleThrower
 {
     public class Inventory : MonoBehaviour
     {
-        
         private List<string> itemTags;
+
+        public Inventory()
+        {
+            itemTags = new List<string>();
+        }
 
         public bool Add(CollectableItem item)
         {

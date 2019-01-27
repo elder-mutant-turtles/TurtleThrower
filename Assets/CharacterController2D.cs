@@ -198,6 +198,17 @@ public class CharacterController2D : MonoBehaviour
 		Interactable interactableEnter = other.GetComponent<Interactable>();
 		if (interactableEnter != null)
 		{
+			if (interactableEnter.Automatic)
+			{
+				var collectableItem = interactableEnter.GetComponent<CollectableItem>();
+				if (collectableItem)
+				{
+					inventory.Add(collectableItem);
+				}
+				interactableEnter.Interact();
+				return;
+			}
+			
 			if (interactables.Contains(interactableEnter))
 			{
 				return;

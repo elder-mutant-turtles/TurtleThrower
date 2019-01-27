@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerCollider: {fileID: 61678859816902666}
+  Automatic: 1
 --- !u!212 &212569502551988360
 SpriteRenderer:
   m_ObjectHideFlags: 1
