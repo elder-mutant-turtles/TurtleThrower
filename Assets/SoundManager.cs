@@ -99,7 +99,7 @@ namespace DefaultNamespace
                 var sourceInstance = Instantiate(SourcePrefab);
                 DontDestroyOnLoad(sourceInstance.gameObject);
                 var source = sourceInstance.GetComponent<AudioSource>();
-                source.volume = 0.6f;
+                source.volume = 0.8f;
                 sources.Add(source);
                 
             }
