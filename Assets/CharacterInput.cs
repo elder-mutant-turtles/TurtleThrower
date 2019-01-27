@@ -23,6 +23,11 @@ public class CharacterInput : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
+		if (controller.IsDead())
+		{
+			return;
+		}
+		
 		if (JumpInputPressed())
 		{
 			jump = true;
