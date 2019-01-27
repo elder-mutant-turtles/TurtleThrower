@@ -13,7 +13,19 @@ namespace DefaultNamespace
 
         private List<AudioSource> sources;
 
-        public static SoundManager Instance;
+        private static SoundManager instance;
+        public static SoundManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new SoundManager();
+                }
+
+                return instance;
+            }
+        }
 
         private AudioSource bgmSource;
 
@@ -58,7 +70,7 @@ namespace DefaultNamespace
         
         private void Awake()
         {
-            Instance = this;
+            instance = this;
             
             DontDestroyOnLoad(gameObject);
             
