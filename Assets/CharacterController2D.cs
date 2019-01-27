@@ -136,10 +136,10 @@ public class CharacterController2D : MonoBehaviour
 				this.shellController = scInteractable;
 			}
 
-			var keyItem = interactable.GetComponent<KeyItem>();
-			if (keyItem)
+			var collectableItem = interactable.GetComponent<CollectableItem>();
+			if (collectableItem)
 			{
-				inventory.ItemTags.Add(keyItem.color.ToString());
+				inventory.Add(collectableItem);
 			}
 			
 			interactable.Interact();
@@ -274,5 +274,34 @@ public class CharacterController2D : MonoBehaviour
 
 		rigidBody.MovePosition(m_CurrentPosition);
 		m_NextMovement = Vector2.zero;
+	}
+
+
+	public bool CheckVictory()
+	{
+		if (shellController == null)
+		{
+			return false;
+		}
+
+		List<CollectableItem.ItemID> requiredList = new List<CollectableItem.ItemID>()
+		{
+			CollectableItem.ItemID.CollectableBottle,
+			CollectableItem.ItemID.CollectableCrocs,
+			CollectableItem.ItemID.CollectableFrame,
+			CollectableItem.ItemID.CollectableHat,
+			CollectableItem.ItemID.CollectableVhs
+		};
+
+		
+		foreach (var itemId in requiredList)
+		{
+			if (inventory.Contains(itemId) == false)
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 }

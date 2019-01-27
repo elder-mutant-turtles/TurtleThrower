@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70bb4783daf4deb4983ab2a104de261c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 2
+  id: 2
   interactable: {fileID: 114620763931543430}
 --- !u!114 &114620763931543430
 MonoBehaviour:
