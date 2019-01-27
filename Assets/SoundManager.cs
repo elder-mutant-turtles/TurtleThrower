@@ -74,7 +74,8 @@ namespace DefaultNamespace
             {
                 return;
             }
-            
+
+            bgmSource.clip = clip;
             bgmSource.Play();
         }
         
@@ -97,7 +98,10 @@ namespace DefaultNamespace
             {
                 var sourceInstance = Instantiate(SourcePrefab);
                 DontDestroyOnLoad(sourceInstance.gameObject);
-                sources.Add(sourceInstance.GetComponent<AudioSource>());
+                var source = sourceInstance.GetComponent<AudioSource>();
+                source.volume = 0.6f;
+                sources.Add(source);
+                
             }
 
             var bgmSourceInstance = Instantiate(SourcePrefab);

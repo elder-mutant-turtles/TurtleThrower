@@ -211,6 +211,8 @@ public class CharacterController2D : MonoBehaviour
 				if (collectableItem)
 				{
 					inventory.Add(collectableItem);
+					NewItemScreen.Instance.ShowNewItem(collectableItem);
+					SoundManager.Instance.PlaySound("item_collect");
 				}
 				interactableEnter.Interact();
 				return;
@@ -235,7 +237,7 @@ public class CharacterController2D : MonoBehaviour
 		shellEquipped = true;
 	}
 
-	private void OnCollisionStay2D(Collision2D other)
+	private void OnTriggerStay2D(Collider2D other)
 	{
 		if (other.gameObject.tag.Equals("Deadly"))
 		{

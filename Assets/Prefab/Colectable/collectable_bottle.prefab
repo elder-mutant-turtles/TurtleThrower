@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114782232663291810}
   - component: {fileID: 114748660351296696}
   - component: {fileID: 61522891283451038}
+  - component: {fileID: 114523051907920066}
   m_Layer: 11
   m_Name: collectable_bottle
   m_TagString: Untagged
@@ -116,6 +117,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114523051907920066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863053114538736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cc1709487ce4fdd992df44e91abf7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Tubaina Bottle
+  ItemLore: 
+  ItemIcon: {fileID: 0}
 --- !u!114 &114748660351296696
 MonoBehaviour:
   m_ObjectHideFlags: 1
