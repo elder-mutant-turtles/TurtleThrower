@@ -143,6 +143,7 @@
           </e>
         </e>
       </e>
+      <e p="Assets/CollectableItem.cs" t="Include" />
       <e p="Assets/Demigiant" t="Include">
         <e p="DOTween" t="Include">
           <e p="Modules" t="Include">
@@ -164,7 +165,6 @@
       <e p="Assets/InputDebugger.cs" t="Include" />
       <e p="Assets/Interactable.cs" t="Include" />
       <e p="Assets/Inventory.cs" t="Include" />
-      <e p="Assets/KeyItem.cs" t="Include" />
       <e p="Assets/PresenceTrigger.cs" t="Include" />
       <e p="Assets/PressController.cs" t="Include" />
       <e p="Assets/Scenery" t="Include">

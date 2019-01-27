@@ -22,8 +22,15 @@ namespace DefaultNamespace
         public Transform PlaySound(string soundName)
         {
             var soundSource = sources[iterator];
-            
-            soundSource.clip = audioDic[soundName];
+
+            AudioClip clip;
+
+            if (!audioDic.TryGetValue(soundName, out clip))
+            {
+                return null;
+            }
+
+            soundSource.clip = clip;
             
             soundSource.Play();
 
@@ -34,7 +41,13 @@ namespace DefaultNamespace
 
         public void PlayBGM(string bgmName)
         {
-            bgmSource.clip = audioDic[bgmName];
+            AudioClip clip;
+
+            if (!audioDic.TryGetValue(bgmName, out clip))
+            {
+                return;
+            }
+            
             bgmSource.Play();
         }
         

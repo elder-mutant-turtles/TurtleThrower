@@ -6,7 +6,11 @@ namespace DefaultNamespace
     {
         public void PlaySound(string soundName)
         {
-            SoundManager.Instance.PlaySound(soundName).position = transform.position;
+            var trans = SoundManager.Instance.PlaySound(soundName);
+            if (trans != null)
+            {
+                trans.position = transform.position;   
+            }
         }
     }
 }
