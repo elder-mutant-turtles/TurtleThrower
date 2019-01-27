@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Cool Hat
-  ItemLore: 
-  ItemIcon: {fileID: 0}
+  ItemLore: The ultimate protection agains "ULTRAVIOLENT" rays!
+  ItemIcon: {fileID: 21300000, guid: 847819b32cd751746936dccd2041ffb5, type: 3}
 --- !u!114 &114888628116240510
 MonoBehaviour:
   m_ObjectHideFlags: 1

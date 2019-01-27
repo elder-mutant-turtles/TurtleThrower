@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70bb4783daf4deb4983ab2a104de261c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 4
   interactable: {fileID: 114196331717039556}
 --- !u!114 &114362559346951446
 MonoBehaviour:
@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Cocrs Shoes
-  ItemLore: 
-  ItemIcon: {fileID: 0}
+  ItemLore: No matter what they said... those are comfortable
+  ItemIcon: {fileID: 21300000, guid: 34930336b6e25674898972c6b7b9cb0f, type: 3}
 --- !u!122 &122211638793797862
 Halo:
   m_ObjectHideFlags: 1

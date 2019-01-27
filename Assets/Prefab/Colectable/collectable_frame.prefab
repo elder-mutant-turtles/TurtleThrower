@@ -154,9 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cc1709487ce4fdd992df44e91abf7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Moma's Photograph
-  ItemLore: 
-  ItemIcon: {fileID: 0}
+  ItemName: Moma Photograph
+  ItemLore: She lived 800 years, no way a nuclear explosion would kill the old lady.
+  ItemIcon: {fileID: 21300000, guid: b1d3579949ed71e45ade76940abb1889, type: 3}
 --- !u!122 &122371492106399230
 Halo:
   m_ObjectHideFlags: 1

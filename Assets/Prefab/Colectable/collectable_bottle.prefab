@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tubaina Bottle
-  ItemLore: 
-  ItemIcon: {fileID: 0}
+  ItemLore: The last "tubaina" bottle in the world, that is essential.
+  ItemIcon: {fileID: 21300000, guid: 7aa6b4e00af1ec84d8b8b8452f571e41, type: 3}
 --- !u!114 &114748660351296696
 MonoBehaviour:
   m_ObjectHideFlags: 1
