@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Turxxxtle Video
-  ItemLore: 
-  ItemIcon: {fileID: 0}
+  ItemLore: It will be a lonely life around here...
+  ItemIcon: {fileID: 21300000, guid: 4732163f0af7fc34ba16c34def5b8f77, type: 3}
 --- !u!114 &114829812697309666
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Cocrs Shoes
-  ItemLore: 
-  ItemIcon: {fileID: 0}
+  ItemLore: No matter what they said... those are comfortable
+  ItemIcon: {fileID: 21300000, guid: 34930336b6e25674898972c6b7b9cb0f, type: 3}
 --- !u!122 &122211638793797862
 Halo:
   m_ObjectHideFlags: 1
