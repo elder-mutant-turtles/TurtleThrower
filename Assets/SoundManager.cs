@@ -21,6 +21,11 @@ namespace DefaultNamespace
 
         public Transform PlaySound(string soundName)
         {
+            if (iterator >= sources.Count)
+            {
+                iterator = 0;
+            }
+            
             var soundSource = sources[iterator];
 
             AudioClip clip;

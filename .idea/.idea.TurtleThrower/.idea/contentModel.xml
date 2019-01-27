@@ -188,6 +188,11 @@
       <e p="Assets/SoundManager.cs" t="Include" />
       <e p="Assets/SplashScreenManager.cs" t="Include" />
       <e p="Assets/Sprites" t="Include">
+        <e p="Terrain" t="Include">
+          <e p="AutoTile4.cs" t="Include" />
+          <e p="AutoTile8.cs" t="Include" />
+          <e p="AutoTileBase.cs" t="Include" />
+        </e>
         <e p="Threats" t="Include">
           <e p="Animations" t="Include">
             <e p="Saw" t="Include">
