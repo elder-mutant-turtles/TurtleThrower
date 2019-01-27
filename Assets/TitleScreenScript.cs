@@ -7,7 +7,7 @@ public class TitleScreenScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("j1a1"))
+		if (Input.anyKey)
 		{
 			SceneManager.LoadScene("FinalLevel");
 		}		
