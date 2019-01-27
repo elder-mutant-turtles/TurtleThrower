@@ -237,7 +237,7 @@ public class CharacterController2D : MonoBehaviour
 		shellEquipped = true;
 	}
 
-	private void OnCollisionStay2D(Collision2D other)
+	private void OnTriggerStay2D(Collider2D other)
 	{
 		if (other.gameObject.tag.Equals("Deadly"))
 		{
