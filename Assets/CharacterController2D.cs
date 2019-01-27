@@ -251,7 +251,14 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Die()
 	{
+		if (shellEquipped)
+		{
+			return;
+		}
+		
 		Animator.SetTrigger("Die");
+
+		SoundManager.Instance.PlaySound("die");
 
 		transform.DOScale(0, 1f);
 		

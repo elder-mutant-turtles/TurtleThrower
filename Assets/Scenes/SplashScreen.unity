@@ -432,7 +432,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SourcePrefab: {fileID: 1674664696808086, guid: 47b94d00111744ec8be0b534c36a0d34,
     type: 2}
-  Audios: []
+  Audios:
+  - {fileID: 8300000, guid: abfedb9282ba94242ac98e9f2245e2d5, type: 3}
+  - {fileID: 8300000, guid: ebdee5c369ab7c5488637b53cb2431d6, type: 3}
+  - {fileID: 8300000, guid: 6302a9372690a31459b11e80d352cb07, type: 3}
+  - {fileID: 8300000, guid: 51ed003aab00aa34a985b44202f65f66, type: 3}
+  - {fileID: 8300000, guid: 84e3d9167e47bc146b874388f3ed5344, type: 3}
+  - {fileID: 8300000, guid: ad56803ba264e904e84a526773c93103, type: 3}
+  - {fileID: 8300000, guid: 5bead2a5baeb8d744807f31c91ff1e82, type: 3}
+  - {fileID: 8300000, guid: 6d5a0bcc971eae74e86f06e701a4a3e4, type: 3}
+  - {fileID: 8300000, guid: d32c611aacb91bd429bcf93064862c04, type: 3}
+  - {fileID: 8300000, guid: a2636c0ec4e113d4eb4bb92ac8f33598, type: 3}
 --- !u!4 &1754280012
 Transform:
   m_ObjectHideFlags: 0
