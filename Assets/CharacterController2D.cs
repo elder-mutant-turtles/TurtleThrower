@@ -173,6 +173,8 @@ public class CharacterController2D : MonoBehaviour
 		footRayDistance = Foot.localPosition.magnitude * transform.localScale.y;
 
 		results = new RaycastHit2D[1];
+
+		groundMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("MovableScenery");
 	}
 	
 	private void Start()
