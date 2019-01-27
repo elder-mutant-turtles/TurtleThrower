@@ -19,35 +19,39 @@ public class NewItemScreen : MonoBehaviour
 
 	public void ShowNewItem(CollectableItem item)
 	{
-		var memento = item.GetComponent<MementoScript>();
+		var memento = item.GetComponentInChildren<MementoScript>();
 
 		if (memento == null)
 		{
 			return;
 		}
 
-		CanvasAlpha.alpha = 0f;
+		CanvasAlpha.DOFade(1, 0.3f).SetUpdate(true);
 		
 		transform.localScale = Vector3.zero;
 
-		transform.DOScale(1, 0.3f);
+		transform.DOScale(1, 0.3f).SetUpdate(true);
 
 		ItemName.text = memento.ItemName;
 		ItemLore.text = memento.ItemLore;
 
 		ItemIcon.sprite = memento.ItemIcon;
 
+		Time.timeScale = 0f;
+
 		shown = true;
 	}
 
 	private void Hide()
 	{
-		transform.DOScale(0, 0.3f);
+		transform.DOScale(0, 0.3f).SetUpdate(true);
 
-		CanvasAlpha.DOFade(0, 0.5f);
+		CanvasAlpha.DOFade(0, 0.5f).SetUpdate(true);
+
+		Time.timeScale = 1f;
 	}
-	
-	private void FixedUpdate()
+
+	private void Update()
 	{
 		if (shown && Input.anyKey)
 		{

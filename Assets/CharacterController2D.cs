@@ -152,6 +152,7 @@ public class CharacterController2D : MonoBehaviour
 			if (collectableItem)
 			{
 				inventory.Add(collectableItem);
+				CheckVictory();
 			}
 			
 			interactable.Interact();
@@ -213,6 +214,7 @@ public class CharacterController2D : MonoBehaviour
 					inventory.Add(collectableItem);
 					NewItemScreen.Instance.ShowNewItem(collectableItem);
 					SoundManager.Instance.PlaySound("item_collect");
+					CheckVictory();
 				}
 				interactableEnter.Interact();
 				return;
@@ -235,6 +237,8 @@ public class CharacterController2D : MonoBehaviour
 	private void FinishEquipShell()
 	{
 		shellEquipped = true;
+
+		CheckVictory();
 	}
 
 	private void OnTriggerStay2D(Collider2D other)
@@ -364,6 +368,8 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 
+		GameWinScreen.Instance.Show();
+		
 		return true;
 	}
 }
