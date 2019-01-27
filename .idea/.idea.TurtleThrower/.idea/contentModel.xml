@@ -184,6 +184,7 @@
         <e p="Water.shader" t="Include" />
       </e>
       <e p="Assets/ShellController.cs" t="Include" />
+      <e p="Assets/SoundManager.cs" t="Include" />
       <e p="Assets/Sprites" t="Include">
         <e p="Threats" t="Include">
           <e p="Animations" t="Include">

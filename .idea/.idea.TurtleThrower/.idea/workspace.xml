@@ -14,7 +14,7 @@
       <file leaf-file-name="CharacterInput.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CharacterInput.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="209">
               <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
               <folding>
                 <marker date="1548586061276" expanded="true" signature="6:92" ph="..." />
@@ -38,7 +38,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CharacterController2D.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SoundManager.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/SoundManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+              <folding>
+                <marker date="1548592929121" expanded="true" signature="6:52" ph="..." />
+                <marker date="1548592929121" expanded="true" signature="80:1329" ph="{...}" />
+                <marker date="1548592929121" expanded="true" signature="128:1327" ph="{...}" />
+                <marker date="1548592929121" expanded="true" signature="453:657" ph="{...}" />
+                <marker date="1548592929121" expanded="true" signature="695:1321" ph="{...}" />
+                <marker date="1548592929121" expanded="true" signature="978:1055" ph="{...}" />
+                <marker date="1548592929121" expanded="true" signature="1097:1311" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CharacterController2D.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/CharacterController2D.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
@@ -103,6 +121,7 @@
     </findStrings>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CharacterController2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PressController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InputDebugger.cs" root0="FORCE_HIGHLIGHTING" />
@@ -121,6 +140,7 @@
         <option value="$PROJECT_DIR$/Assets/TitleScreenScript.cs" />
         <option value="$PROJECT_DIR$/Assets/CharacterInput.cs" />
         <option value="$PROJECT_DIR$/Assets/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/SoundManager.cs" />
       </list>
     </option>
   </component>
@@ -137,11 +157,25 @@
     <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="UnityExplorer" proportions="" version="1">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="TurtleThrower (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="TurtleThrower (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
@@ -198,7 +232,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35150000" />
+    <option name="totallyTimeSpent" value="36697000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -221,10 +255,10 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32916668" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32916668" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
@@ -525,31 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/CharacterInput.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding>
-            <marker date="1548586061276" expanded="true" signature="6:92" ph="..." />
-            <marker date="1548586061276" expanded="true" signature="137:1894" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="631:1064" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="661:680" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="709:733" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="762:796" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="854:888" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="940:975" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="1030:1061" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="1093:1225" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="1175:1222" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="1259:1336" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="1372:1445" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="1478:1552" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="1580:1650" ph="{...}" />
-            <marker date="1548586061276" expanded="true" signature="1687:1892" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/CharacterController2D.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -598,6 +607,47 @@
             <marker date="1548587060347" expanded="true" signature="5755:5774" ph="{...}" />
             <marker date="1548587060347" expanded="true" signature="5898:6386" ph="{...}" />
             <marker date="1548587060347" expanded="true" signature="5966:6078" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/CharacterInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <marker date="1548586061276" expanded="true" signature="6:92" ph="..." />
+            <marker date="1548586061276" expanded="true" signature="137:1894" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="631:1064" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="661:680" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="709:733" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="762:796" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="854:888" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="940:975" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="1030:1061" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="1093:1225" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="1175:1222" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="1259:1336" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="1372:1445" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="1478:1552" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="1580:1650" ph="{...}" />
+            <marker date="1548586061276" expanded="true" signature="1687:1892" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/SoundManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <marker date="1548592929121" expanded="true" signature="6:52" ph="..." />
+            <marker date="1548592929121" expanded="true" signature="80:1329" ph="{...}" />
+            <marker date="1548592929121" expanded="true" signature="128:1327" ph="{...}" />
+            <marker date="1548592929121" expanded="true" signature="453:657" ph="{...}" />
+            <marker date="1548592929121" expanded="true" signature="695:1321" ph="{...}" />
+            <marker date="1548592929121" expanded="true" signature="978:1055" ph="{...}" />
+            <marker date="1548592929121" expanded="true" signature="1097:1311" ph="{...}" />
           </folding>
         </state>
       </provider>
