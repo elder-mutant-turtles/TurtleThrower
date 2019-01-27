@@ -5,6 +5,13 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets/ActivateObject.cs" t="Include" />
+      <e p="Assets/BOXOPHOBIC" t="Include">
+        <e p="Skybox Cubemap Extended" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="Skybox Cubemap Extended.shader" t="Include" />
+          </e>
+        </e>
+      </e>
       <e p="Assets/CharacterController2D.cs" t="Include" />
       <e p="Assets/CharacterInput.cs" t="Include" />
       <e p="Assets/Cinemachine" t="Include">

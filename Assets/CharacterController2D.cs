@@ -113,6 +113,8 @@ public class CharacterController2D : MonoBehaviour
 		shellController = null;
 		Lift(false);
 		shellEquipped = false;
+
+		Shell.GetComponent<SpriteRenderer>().sortingOrder  = - 2;
 	}
 	
 	/// <summary>
@@ -177,19 +179,16 @@ public class CharacterController2D : MonoBehaviour
 			interactables.Add(interactableEnter);
 			Debug.Log(string.Format("[{0}] interactable near {1}", typeof(CharacterController2D), interactableEnter.DebugInfo()));
 		}
+		
+		if (!shellEquipped && other.gameObject.tag.Equals("Deadly"))
+		{
+			Die();
+		}
 	}
 	
 	private void FinishEquipShell()
 	{
 		shellEquipped = true;
-	}
-
-	private void OnCollisionEnter2D(Collision2D other)
-	{
-		if (other.gameObject.tag.Equals("Deadly"))
-		{
-			Die();
-		}
 	}
 
 	private void Die()
