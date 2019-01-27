@@ -308,6 +308,7 @@ MonoBehaviour:
   Shell: 0
   Item: 1
   ItemId: 2
+  DestroyOnOpen: {fileID: 1822041159678110}
 --- !u!114 &114726851025059240
 MonoBehaviour:
   m_ObjectHideFlags: 1
