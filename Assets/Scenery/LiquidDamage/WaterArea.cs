@@ -317,6 +317,12 @@ namespace Gamekit2D
                 int idx = touchedColumnIndices[i];
                 m_Columns[idx].velocity -= testForce;
             }
+
+            var characterController = collision.GetComponent<CharacterController2D>();
+            if (characterController != null)
+            {
+                characterController.Kill();
+            }
         }
     }
 
