@@ -306,8 +306,8 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   Turtle: 1
   Shell: 0
-  Key: 1
-  KeyColor: 2
+  Item: 1
+  ItemId: 2
 --- !u!114 &114726851025059240
 MonoBehaviour:
   m_ObjectHideFlags: 1
