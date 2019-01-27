@@ -17,8 +17,8 @@ namespace TurtleThrower
 
         public bool Turtle;
         public bool Shell;
-        public bool Key;
-        public KeyItem.KeyColor KeyColor; 
+        public bool Item;
+        public CollectableItem.ItemID ItemId; 
         
         void Reset()
         {
@@ -40,10 +40,10 @@ namespace TurtleThrower
             CharacterController2D turtleController2D = other.GetComponent<CharacterController2D>();
             if (turtleController2D && Turtle)
             {
-                if (Key)
+                if (Item)
                 {
                     var inventory = turtleController2D.GetComponent<Inventory>();
-                    if (inventory != null && inventory.ItemTags.Contains(KeyColor.ToString()))
+                    if (inventory != null && inventory.Contains(ItemId))
                     {
                         dispatchOnEnter = true;
                     }
@@ -74,10 +74,10 @@ namespace TurtleThrower
             CharacterController2D turtleController2D = other.GetComponent<CharacterController2D>();
             if (turtleController2D && Turtle)
             {
-                if (Key)
+                if (Item)
                 {
                     var inventory = turtleController2D.GetComponent<Inventory>();
-                    if (inventory != null && inventory.ItemTags.Contains(KeyColor.ToString()))
+                    if (inventory != null && inventory.Contains(ItemId))
                     {
                         shouldExit = true;
                     }

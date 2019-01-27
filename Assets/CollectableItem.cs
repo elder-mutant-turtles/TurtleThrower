@@ -5,17 +5,22 @@ using UnityEngine;
 namespace TurtleThrower
 {
     [RequireComponent(typeof(Interactable))]
-    public class KeyItem : MonoBehaviour 
+    public class CollectableItem : MonoBehaviour 
     {
 
-        public enum KeyColor
+        public enum ItemID
         {
-            Red,
-            Blue,
-            Yellow
+            RedKey,
+            BlueKey,
+            YellowKey,
+            CollectableBottle,
+            CollectableCrocs,
+            CollectableFrame,
+            CollectableHat,
+            CollectableVhs
         }
 
-        public KeyColor color;
+        public ItemID id;
 
         public Interactable interactable;
         

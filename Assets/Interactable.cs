@@ -8,6 +8,8 @@ namespace TurtleThrower
         public Collider2D triggerCollider;
 
         public event Action InteractCallback;
+
+        public bool Automatic;
         
         public void Interact()
         {
