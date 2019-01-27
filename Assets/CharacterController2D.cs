@@ -235,7 +235,7 @@ public class CharacterController2D : MonoBehaviour
 		shellEquipped = true;
 	}
 
-	private void OnCollisionEnter2D(Collision2D other)
+	private void OnCollisionStay2D(Collision2D other)
 	{
 		if (other.gameObject.tag.Equals("Deadly"))
 		{
@@ -300,8 +300,14 @@ public class CharacterController2D : MonoBehaviour
 
 	private void ApplyGravity()
 	{
-		if (IsGrounded() || IsDead())
+		if (IsGrounded())
 		{
+			return;
+		}
+
+		if (IsDead())
+		{
+			m_Movement = Vector2.zero;
 			return;
 		}
 		var increment = Gravity * Time.fixedDeltaTime;
