@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 95155424705117182}
   - component: {fileID: 114138351177648688}
   - component: {fileID: 61099131290779454}
+  - component: {fileID: 114726851025059240}
   m_Layer: 0
   m_Name: GateYellow
   m_TagString: Untagged
@@ -307,6 +308,17 @@ MonoBehaviour:
   Shell: 0
   Key: 1
   KeyColor: 2
+--- !u!114 &114726851025059240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754340096117746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0a10ca2f7441c694708a5e51fc82a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212373988312250750
 SpriteRenderer:
   m_ObjectHideFlags: 1

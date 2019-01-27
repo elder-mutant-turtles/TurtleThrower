@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class CharacterInput : MonoBehaviour
@@ -31,6 +32,7 @@ public class CharacterInput : MonoBehaviour
 		if (JumpInputPressed())
 		{
 			jump = true;
+			SoundManager.Instance.PlaySound("jump");
 		}
 
 		if (ActionInputPressed())

@@ -15,9 +15,11 @@ namespace DefaultNamespace
 
         public static SoundManager Instance;
 
+        private AudioSource bgmSource;
+
         private int iterator = 0;
 
-        public void PlaySound(string soundName)
+        public Transform PlaySound(string soundName)
         {
             var soundSource = sources[iterator];
             
@@ -26,6 +28,14 @@ namespace DefaultNamespace
             soundSource.Play();
 
             iterator++;
+
+            return soundSource.transform;
+        }
+
+        public void PlayBGM(string bgmName)
+        {
+            bgmSource.clip = audioDic[bgmName];
+            bgmSource.Play();
         }
         
         private void Awake()
@@ -49,6 +59,13 @@ namespace DefaultNamespace
                 DontDestroyOnLoad(SourcePrefab);
                 sources.Add(sourceInstance.GetComponent<AudioSource>());
             }
+
+            var bgmSourceInstance = Instantiate(SourcePrefab);
+            DontDestroyOnLoad(bgmSourceInstance);
+
+            bgmSource = bgmSourceInstance.GetComponent<AudioSource>();
+
+            bgmSource.loop = true;
         }
     }
 }

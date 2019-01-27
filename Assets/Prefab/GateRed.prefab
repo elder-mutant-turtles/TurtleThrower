@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 95961532707278494}
   - component: {fileID: 114967148949869584}
   - component: {fileID: 61765374855459542}
+  - component: {fileID: 114916824854829912}
   m_Layer: 0
   m_Name: GateRed
   m_TagString: Untagged
@@ -256,6 +257,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114916824854829912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965263445303190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0a10ca2f7441c694708a5e51fc82a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114967148949869584
 MonoBehaviour:
   m_ObjectHideFlags: 1

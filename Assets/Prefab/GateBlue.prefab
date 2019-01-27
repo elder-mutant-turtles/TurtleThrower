@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 95660178853534162}
   - component: {fileID: 114890724392020726}
   - component: {fileID: 61536832237601032}
+  - component: {fileID: 114891827795545734}
   m_Layer: 0
   m_Name: GateBlue
   m_TagString: Untagged
@@ -307,6 +308,17 @@ MonoBehaviour:
   Shell: 0
   Key: 1
   KeyColor: 1
+--- !u!114 &114891827795545734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355654307376392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0a10ca2f7441c694708a5e51fc82a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212063478589462142
 SpriteRenderer:
   m_ObjectHideFlags: 1

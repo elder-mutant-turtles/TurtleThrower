@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DefaultNamespace;
 using DG.Tweening;
 using TurtleThrower;
 using UnityEngine;
@@ -127,6 +128,8 @@ public class CharacterController2D : MonoBehaviour
 		shellEquipped = false;
 
 		Shell.GetComponent<SpriteRenderer>().sortingOrder  = - 2;
+		
+		SoundManager.Instance.PlaySound("throw");
 	}
 	
 	/// <summary>
@@ -180,6 +183,8 @@ public class CharacterController2D : MonoBehaviour
 		footRayDistance = Foot.localPosition.magnitude * transform.localScale.y;
 
 		results = new RaycastHit2D[1];
+		
+		SoundManager.Instance.PlayBGM("game_bgm");
 	}
 	
 	private void Start()
