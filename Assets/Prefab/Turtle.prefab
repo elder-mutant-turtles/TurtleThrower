@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 70047348228209090}
   - component: {fileID: 114837036010989968}
   - component: {fileID: 114015676662968948}
+  - component: {fileID: 114111500278162434}
   m_Layer: 8
   m_Name: Turtle
   m_TagString: Untagged
@@ -194,7 +195,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253796540713302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10.52, y: 29.4, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 4604392779577788}
@@ -377,6 +378,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 114837036010989968}
+--- !u!114 &114111500278162434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253796540713302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb5f6b926bfcdc46904300f8edfcffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114837036010989968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -394,8 +406,8 @@ MonoBehaviour:
   DefaultThrowForce: 6
   Animator: {fileID: 95629471089735460}
   WalkVelocity: 5
-  JumpHeight: 5
-  Gravity: 10
+  JumpHeight: 8
+  Gravity: 20
   MovementAcceleration: 100
   Shell: {fileID: 0}
   Foot: {fileID: 4220835509112772}
@@ -403,7 +415,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
-  inventory: {fileID: 0}
+  inventory: {fileID: 114111500278162434}
 --- !u!212 &212016750898875006
 SpriteRenderer:
   m_ObjectHideFlags: 1
