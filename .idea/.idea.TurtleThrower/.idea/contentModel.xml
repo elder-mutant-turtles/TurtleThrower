@@ -165,6 +165,8 @@
       <e p="Assets/InputDebugger.cs" t="Include" />
       <e p="Assets/Interactable.cs" t="Include" />
       <e p="Assets/Inventory.cs" t="Include" />
+      <e p="Assets/MementoScript.cs" t="Include" />
+      <e p="Assets/NewItemScreen.cs" t="Include" />
       <e p="Assets/PresenceTrigger.cs" t="Include" />
       <e p="Assets/PressController.cs" t="Include" />
       <e p="Assets/Scenery" t="Include">

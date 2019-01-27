@@ -211,6 +211,8 @@ public class CharacterController2D : MonoBehaviour
 				if (collectableItem)
 				{
 					inventory.Add(collectableItem);
+					NewItemScreen.Instance.ShowNewItem(collectableItem);
+					SoundManager.Instance.PlaySound("item_collect");
 				}
 				interactableEnter.Interact();
 				return;
