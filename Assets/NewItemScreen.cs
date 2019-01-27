@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
+﻿using DG.Tweening;
 using TurtleThrower;
-using UnityEditor;
+
 using UnityEngine;
 using UnityEngine.UI;
 
