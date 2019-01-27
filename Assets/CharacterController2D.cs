@@ -185,6 +185,8 @@ public class CharacterController2D : MonoBehaviour
 		results = new RaycastHit2D[1];
 		
 		SoundManager.Instance.PlayBGM("game_bgm");
+
+		groundMask = 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("MovableScenery");
 	}
 	
 	private void Start()

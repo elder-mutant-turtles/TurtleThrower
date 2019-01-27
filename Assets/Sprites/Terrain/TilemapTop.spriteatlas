@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TilemapTop
+  m_EditorData:
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingParameters:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300072, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300074, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300068, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300070, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300058, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300064, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300056, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300066, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300060, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300062, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300042, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300040, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300046, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300076, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300044, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300078, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300050, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300048, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300054, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300094, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300052, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300092, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300090, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300088, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300086, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300084, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300082, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300080, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300020, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300022, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300024, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300026, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300028, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300030, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300032, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300034, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300036, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300038, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300010, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300012, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300018, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300016, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300002, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300006, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300004, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300008, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300000, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  - {fileID: 21300014, guid: ab87805285b70e44ca9afd203d60945a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - TilemapFinal_FinalMesmo_AgoraVai_36
+  - TilemapFinal_FinalMesmo_AgoraVai_37
+  - TilemapFinal_FinalMesmo_AgoraVai_34
+  - TilemapFinal_FinalMesmo_AgoraVai_35
+  - TilemapFinal_FinalMesmo_AgoraVai_29
+  - TilemapFinal_FinalMesmo_AgoraVai_32
+  - TilemapFinal_FinalMesmo_AgoraVai_28
+  - TilemapFinal_FinalMesmo_AgoraVai_33
+  - TilemapFinal_FinalMesmo_AgoraVai_30
+  - TilemapFinal_FinalMesmo_AgoraVai_31
+  - TilemapFinal_FinalMesmo_AgoraVai_21
+  - TilemapFinal_FinalMesmo_AgoraVai_20
+  - TilemapFinal_FinalMesmo_AgoraVai_23
+  - TilemapFinal_FinalMesmo_AgoraVai_38
+  - TilemapFinal_FinalMesmo_AgoraVai_22
+  - TilemapFinal_FinalMesmo_AgoraVai_39
+  - TilemapFinal_FinalMesmo_AgoraVai_25
+  - TilemapFinal_FinalMesmo_AgoraVai_24
+  - TilemapFinal_FinalMesmo_AgoraVai_27
+  - TilemapFinal_FinalMesmo_AgoraVai_47
+  - TilemapFinal_FinalMesmo_AgoraVai_26
+  - TilemapFinal_FinalMesmo_AgoraVai_46
+  - TilemapFinal_FinalMesmo_AgoraVai_45
+  - TilemapFinal_FinalMesmo_AgoraVai_44
+  - TilemapFinal_FinalMesmo_AgoraVai_43
+  - TilemapFinal_FinalMesmo_AgoraVai_42
+  - TilemapFinal_FinalMesmo_AgoraVai_41
+  - TilemapFinal_FinalMesmo_AgoraVai_40
+  - TilemapFinal_FinalMesmo_AgoraVai_10
+  - TilemapFinal_FinalMesmo_AgoraVai_11
+  - TilemapFinal_FinalMesmo_AgoraVai_12
+  - TilemapFinal_FinalMesmo_AgoraVai_13
+  - TilemapFinal_FinalMesmo_AgoraVai_14
+  - TilemapFinal_FinalMesmo_AgoraVai_15
+  - TilemapFinal_FinalMesmo_AgoraVai_16
+  - TilemapFinal_FinalMesmo_AgoraVai_17
+  - TilemapFinal_FinalMesmo_AgoraVai_18
+  - TilemapFinal_FinalMesmo_AgoraVai_19
+  - TilemapFinal_FinalMesmo_AgoraVai_5
+  - TilemapFinal_FinalMesmo_AgoraVai_6
+  - TilemapFinal_FinalMesmo_AgoraVai_9
+  - TilemapFinal_FinalMesmo_AgoraVai_8
+  - TilemapFinal_FinalMesmo_AgoraVai_1
+  - TilemapFinal_FinalMesmo_AgoraVai_3
+  - TilemapFinal_FinalMesmo_AgoraVai_2
+  - TilemapFinal_FinalMesmo_AgoraVai_4
+  - TilemapFinal_FinalMesmo_AgoraVai_0
+  - TilemapFinal_FinalMesmo_AgoraVai_7
+  m_Tag: TilemapTop
+  m_IsVariant: 0
