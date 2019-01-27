@@ -53,6 +53,8 @@ public class CharacterController2D : MonoBehaviour
 	
 	public Vector2 Velocity { get; protected set; }
 
+	public Inventory inventory;
+
 	public void Move(float value)
 	{
 		var scaledVelocity = value * WalkVelocity * (shellEquipped ? 0.5f : 1f);
@@ -128,13 +130,21 @@ public class CharacterController2D : MonoBehaviour
 		// Check proximity.
 		foreach (var interactable in interactables)
 		{
-			interactable.Interact();
+
 			var scInteractable = interactable.GetComponentInParent<ShellController>();
 			if (scInteractable)
 			{
 				scInteractable.SetAttachedToTurtle(DefaultShellPivot, FinishEquipShell);
 				this.shellController = scInteractable;
 			}
+
+			var keyItem = interactable.GetComponent<KeyItem>();
+			if (keyItem)
+			{
+				inventory.ItemTags.Add(keyItem.color.ToString());
+			}
+			
+			interactable.Interact();
 		}
 	}
 
@@ -168,6 +178,12 @@ public class CharacterController2D : MonoBehaviour
 	private void Start()
 	{
 		interactables = new List<Interactable>();
+
+		if (inventory == null)
+		{
+			inventory = GetComponent<Inventory>();
+		}
+		
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)

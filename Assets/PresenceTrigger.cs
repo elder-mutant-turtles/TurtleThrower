@@ -17,7 +17,9 @@ namespace TurtleThrower
 
         public bool Turtle;
         public bool Shell;
-
+        public bool Key;
+        public KeyItem.KeyColor KeyColor; 
+        
         void Reset()
         {
             layers = LayerMask.NameToLayer("Everything");
@@ -38,7 +40,19 @@ namespace TurtleThrower
             CharacterController2D turtleController2D = other.GetComponent<CharacterController2D>();
             if (turtleController2D && Turtle)
             {
-                dispatchOnEnter = true;
+                if (Key)
+                {
+                    var inventory = turtleController2D.GetComponent<Inventory>();
+                    if (inventory != null && inventory.ItemTags.Contains(KeyColor.ToString()))
+                    {
+                        dispatchOnEnter = true;
+                    }
+                }
+                else
+                {
+                    dispatchOnEnter = true;    
+                }
+                
             }
 
             ShellController shellController = other.GetComponent<ShellController>();
@@ -46,7 +60,7 @@ namespace TurtleThrower
             {
                 dispatchOnEnter = true;
             }
-
+            
             if (dispatchOnEnter)
             {
                 ExecuteOnEnter(other);
@@ -60,6 +74,19 @@ namespace TurtleThrower
             CharacterController2D turtleController2D = other.GetComponent<CharacterController2D>();
             if (turtleController2D && Turtle)
             {
+                if (Key)
+                {
+                    var inventory = turtleController2D.GetComponent<Inventory>();
+                    if (inventory != null && inventory.ItemTags.Contains(KeyColor.ToString()))
+                    {
+                        shouldExit = true;
+                    }
+                }
+                else
+                {
+                    shouldExit = true;
+                }
+                
                 shouldExit = true;
             }
 
