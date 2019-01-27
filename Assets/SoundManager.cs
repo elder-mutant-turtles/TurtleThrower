@@ -33,6 +33,11 @@ namespace DefaultNamespace
 
         public Transform PlaySound(string soundName)
         {
+            if (sources == null)
+            {
+                return null;
+            }
+            
             if (iterator >= sources.Count)
             {
                 iterator = 0;
@@ -58,6 +63,11 @@ namespace DefaultNamespace
 
         public void PlayBGM(string bgmName)
         {
+            if (audioDic == null)
+            {
+                return;
+            }
+            
             AudioClip clip;
 
             if (!audioDic.TryGetValue(bgmName, out clip))
@@ -86,7 +96,7 @@ namespace DefaultNamespace
             for (int i = 0; i < 10; i++)
             {
                 var sourceInstance = Instantiate(SourcePrefab);
-                DontDestroyOnLoad(SourcePrefab);
+                DontDestroyOnLoad(sourceInstance.gameObject);
                 sources.Add(sourceInstance.GetComponent<AudioSource>());
             }
 
