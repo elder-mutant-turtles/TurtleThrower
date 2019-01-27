@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114539828092534394}
   - component: {fileID: 114117722234045122}
   - component: {fileID: 61476409902328912}
+  - component: {fileID: 114809468638860130}
   m_Layer: 11
   m_Name: collectable_frame
   m_TagString: Untagged
@@ -142,6 +143,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerCollider: {fileID: 61476409902328912}
   Automatic: 1
+--- !u!114 &114809468638860130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429304450863494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cc1709487ce4fdd992df44e91abf7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Moma's Photograph
+  ItemLore: 
+  ItemIcon: {fileID: 0}
 --- !u!122 &122371492106399230
 Halo:
   m_ObjectHideFlags: 1

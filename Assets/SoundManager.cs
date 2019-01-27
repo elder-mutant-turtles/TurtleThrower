@@ -13,7 +13,19 @@ namespace DefaultNamespace
 
         private List<AudioSource> sources;
 
-        public static SoundManager Instance;
+        private static SoundManager instance;
+        public static SoundManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new SoundManager();
+                }
+
+                return instance;
+            }
+        }
 
         private AudioSource bgmSource;
 
@@ -21,6 +33,11 @@ namespace DefaultNamespace
 
         public Transform PlaySound(string soundName)
         {
+            if (sources == null)
+            {
+                return null;
+            }
+            
             if (iterator >= sources.Count)
             {
                 iterator = 0;
@@ -46,19 +63,25 @@ namespace DefaultNamespace
 
         public void PlayBGM(string bgmName)
         {
+            if (audioDic == null)
+            {
+                return;
+            }
+            
             AudioClip clip;
 
             if (!audioDic.TryGetValue(bgmName, out clip))
             {
                 return;
             }
-            
+
+            bgmSource.clip = clip;
             bgmSource.Play();
         }
         
         private void Awake()
         {
-            Instance = this;
+            instance = this;
             
             DontDestroyOnLoad(gameObject);
             
@@ -74,8 +97,11 @@ namespace DefaultNamespace
             for (int i = 0; i < 10; i++)
             {
                 var sourceInstance = Instantiate(SourcePrefab);
-                DontDestroyOnLoad(SourcePrefab);
-                sources.Add(sourceInstance.GetComponent<AudioSource>());
+                DontDestroyOnLoad(sourceInstance.gameObject);
+                var source = sourceInstance.GetComponent<AudioSource>();
+                source.volume = 0.6f;
+                sources.Add(source);
+                
             }
 
             var bgmSourceInstance = Instantiate(SourcePrefab);

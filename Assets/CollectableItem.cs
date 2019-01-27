@@ -17,7 +17,9 @@ namespace TurtleThrower
             CollectableCrocs,
             CollectableFrame,
             CollectableHat,
-            CollectableVhs
+            CollectableVhs,
+            GreenKey,
+            CyanKey
         }
 
         public ItemID id;

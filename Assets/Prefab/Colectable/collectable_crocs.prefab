@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114196331717039556}
   - component: {fileID: 114257630119373196}
   - component: {fileID: 61282729883650060}
+  - component: {fileID: 114362559346951446}
   m_Layer: 11
   m_Name: collectable_crocs
   m_TagString: Untagged
@@ -142,6 +143,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   interactable: {fileID: 114196331717039556}
+--- !u!114 &114362559346951446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520556633909796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cc1709487ce4fdd992df44e91abf7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Cocrs Shoes
+  ItemLore: 
+  ItemIcon: {fileID: 0}
 --- !u!122 &122211638793797862
 Halo:
   m_ObjectHideFlags: 1
