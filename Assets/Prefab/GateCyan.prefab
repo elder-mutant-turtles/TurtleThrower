@@ -319,6 +319,7 @@ MonoBehaviour:
   Shell: 0
   Item: 1
   ItemId: 9
+  DestroyOnOpen: {fileID: 1661840813888206}
 --- !u!212 &212044553013374470
 SpriteRenderer:
   m_ObjectHideFlags: 1

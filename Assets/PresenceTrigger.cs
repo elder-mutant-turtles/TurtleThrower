@@ -18,7 +18,9 @@ namespace TurtleThrower
         public bool Turtle;
         public bool Shell;
         public bool Item;
-        public CollectableItem.ItemID ItemId; 
+        public CollectableItem.ItemID ItemId;
+
+        public GameObject DestroyOnOpen;
         
         void Reset()
         {
@@ -105,6 +107,10 @@ namespace TurtleThrower
         protected virtual void ExecuteOnEnter(Collider2D other)
         {
             OnEnter.Invoke();
+            if (DestroyOnOpen != null)
+            {
+                Destroy(DestroyOnOpen);   
+            }
         }
 
         protected virtual void ExecuteOnExit(Collider2D other)
