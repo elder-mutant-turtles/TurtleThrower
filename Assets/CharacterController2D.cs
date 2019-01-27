@@ -55,6 +55,13 @@ public class CharacterController2D : MonoBehaviour
 
 	public Inventory inventory;
 
+	private bool isDead = false;
+
+	public bool IsDead()
+	{
+		return isDead;
+	}
+
 	public void Move(float value)
 	{
 		var scaledVelocity = value * WalkVelocity * (shellEquipped ? 0.5f : 1f);
@@ -118,6 +125,8 @@ public class CharacterController2D : MonoBehaviour
 		shellController = null;
 		Lift(false);
 		shellEquipped = false;
+
+		Shell.GetComponent<SpriteRenderer>().sortingOrder  = - 2;
 	}
 	
 	/// <summary>
@@ -196,6 +205,11 @@ public class CharacterController2D : MonoBehaviour
 			interactables.Add(interactableEnter);
 			Debug.Log(string.Format("[{0}] interactable near {1}", typeof(CharacterController2D), interactableEnter.DebugInfo()));
 		}
+		
+		if (!shellEquipped && other.gameObject.tag.Equals("Deadly"))
+		{
+			Die();
+		}
 	}
 	
 	private void FinishEquipShell()
@@ -222,15 +236,30 @@ public class CharacterController2D : MonoBehaviour
 	private void Die()
 	{
 		Animator.SetTrigger("Die");
-		
-		transform.DOMove(Shell.position, 1.0f);
+
+		transform.DOScale(0, 1f);
 		
 		Invoke("Respawn", 1.5f);
+
+		isDead = true;
 	}
 
 	private void Respawn()
 	{
 		Animator.SetTrigger("Respawn");
+		
+		transform.DOMove(Shell.position, 1.0f).onComplete += FinishRespawn;
+	}
+
+	private void FinishRespawn()
+	{
+		isDead = false;
+
+		transform.DOScale(0.1f, 0.5f);
+		
+		var shellController = Shell.GetComponent<ShellController>();
+		shellController.SetAttachedToTurtle(DefaultShellPivot, FinishEquipShell);
+		this.shellController = shellController;
 	}
 
 	void OnTriggerExit2D(Collider2D other)
@@ -246,7 +275,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void ApplyGravity()
 	{
-		if (IsGrounded())
+		if (IsGrounded() || IsDead())
 		{
 			return;
 		}

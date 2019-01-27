@@ -81,6 +81,8 @@ namespace TurtleThrower
 		    var reverseRotation = transform.DOLocalRotate(Vector3.zero, 0.3f);
 			reverseRotation.onComplete += finishEquipCallback;		
 			reverseRotation.Play();
+
+		    GetComponent<SpriteRenderer>().sortingOrder = 2;
 	    }
 	    
 	    
