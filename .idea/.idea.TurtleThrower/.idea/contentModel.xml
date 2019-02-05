@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\Tapps\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_TurtleThrower.450108033.00" t="ExcludeRecursive" />
+    <e p="D:\devel\work\TurtleThrower" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
-      <e p="Assets/ActivateObject.cs" t="Include" />
-      <e p="Assets/BOXOPHOBIC" t="Include">
+      <e p="Assets\ActivateObject.cs" t="Include" />
+      <e p="Assets\BOXOPHOBIC" t="Include">
         <e p="Skybox Cubemap Extended" t="Include">
           <e p="Shaders" t="Include">
             <e p="Skybox Cubemap Extended.shader" t="Include" />
           </e>
         </e>
       </e>
-      <e p="Assets/CharacterController2D.cs" t="Include" />
-      <e p="Assets/CharacterInput.cs" t="Include" />
-      <e p="Assets/Cinemachine" t="Include">
+      <e p="Assets\CharacterController2D.cs" t="Include" />
+      <e p="Assets\CharacterInput.cs" t="Include" />
+      <e p="Assets\Cinemachine" t="Include">
         <e p="Base" t="Include">
           <e p="Editor" t="Include">
             <e p="Editors" t="Include">
@@ -143,8 +144,8 @@
           </e>
         </e>
       </e>
-      <e p="Assets/CollectableItem.cs" t="Include" />
-      <e p="Assets/Demigiant" t="Include">
+      <e p="Assets\CollectableItem.cs" t="Include" />
+      <e p="Assets\Demigiant" t="Include">
         <e p="DOTween" t="Include">
           <e p="Modules" t="Include">
             <e p="DOTweenModuleAudio.cs" t="Include" />
@@ -158,19 +159,19 @@
           <e p="readme.txt" t="Include" />
         </e>
       </e>
-      <e p="Assets/DoorBehaviour.cs" t="Include" />
-      <e p="Assets/Editor" t="Include">
+      <e p="Assets\DoorBehaviour.cs" t="Include" />
+      <e p="Assets\Editor" t="Include">
         <e p="InputEditor.cs" t="Include" />
       </e>
-      <e p="Assets/GameWinScreen.cs" t="Include" />
-      <e p="Assets/InputDebugger.cs" t="Include" />
-      <e p="Assets/Interactable.cs" t="Include" />
-      <e p="Assets/Inventory.cs" t="Include" />
-      <e p="Assets/MementoScript.cs" t="Include" />
-      <e p="Assets/NewItemScreen.cs" t="Include" />
-      <e p="Assets/PresenceTrigger.cs" t="Include" />
-      <e p="Assets/PressController.cs" t="Include" />
-      <e p="Assets/Scenery" t="Include">
+      <e p="Assets\GameWinScreen.cs" t="Include" />
+      <e p="Assets\InputDebugger.cs" t="Include" />
+      <e p="Assets\Interactable.cs" t="Include" />
+      <e p="Assets\Inventory.cs" t="Include" />
+      <e p="Assets\MementoScript.cs" t="Include" />
+      <e p="Assets\NewItemScreen.cs" t="Include" />
+      <e p="Assets\PresenceTrigger.cs" t="Include" />
+      <e p="Assets\PressController.cs" t="Include" />
+      <e p="Assets\Scenery" t="Include">
         <e p="LiquidDamage" t="Include">
           <e p="WaterArea.cs" t="Include" />
         </e>
@@ -183,15 +184,15 @@
           <e p="PlatformCatcher.cs" t="Include" />
         </e>
       </e>
-      <e p="Assets/Shader" t="Include">
+      <e p="Assets\Shader" t="Include">
         <e p="Water.shader" t="Include" />
       </e>
-      <e p="Assets/ShellController.cs" t="Include" />
-      <e p="Assets/SkipCutSceneScript.cs" t="Include" />
-      <e p="Assets/SoundAnimator.cs" t="Include" />
-      <e p="Assets/SoundManager.cs" t="Include" />
-      <e p="Assets/SplashScreenManager.cs" t="Include" />
-      <e p="Assets/Sprites" t="Include">
+      <e p="Assets\ShellController.cs" t="Include" />
+      <e p="Assets\SkipCutSceneScript.cs" t="Include" />
+      <e p="Assets\SoundAnimator.cs" t="Include" />
+      <e p="Assets\SoundManager.cs" t="Include" />
+      <e p="Assets\SplashScreenManager.cs" t="Include" />
+      <e p="Assets\Sprites" t="Include">
         <e p="Terrain" t="Include">
           <e p="AutoTile4.cs" t="Include" />
           <e p="AutoTile8.cs" t="Include" />
@@ -205,8 +206,8 @@
           </e>
         </e>
       </e>
-      <e p="Assets/TitleScreenScript.cs" t="Include" />
-      <e p="Assets/Utils" t="Include">
+      <e p="Assets\TitleScreenScript.cs" t="Include" />
+      <e p="Assets\Utils" t="Include">
         <e p="GameManager.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />
@@ -217,7 +218,5 @@
       </e>
       <e p="TurtleThrower.sln" t="IncludeFlat" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_TurtleThrower.375847605.00" t="ExcludeRecursive" />
   </component>
 </project>
