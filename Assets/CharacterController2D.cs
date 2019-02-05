@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DefaultNamespace;
 using DG.Tweening;
 using TurtleThrower;
 using UnityEngine;
-using UnityEngine.Windows.Speech;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -51,6 +51,7 @@ public class CharacterController2D : MonoBehaviour
 	Vector2 m_NextMovement;
 
 	private Vector2 m_Movement;
+	private bool isJump;
 	
 	public Vector2 Velocity { get; protected set; }
 
@@ -113,6 +114,7 @@ public class CharacterController2D : MonoBehaviour
 	{
 		if (IsGrounded())
 		{
+			isJump = true;
 			m_Movement.y = JumpHeight;
 			Animator.SetTrigger("Jump");
 		}
@@ -278,19 +280,26 @@ public class CharacterController2D : MonoBehaviour
 	private void Respawn()
 	{
 		Animator.SetTrigger("Respawn");
+
+		rigidBody.simulated = false;
 		
 		transform.DOMove(Shell.position, 1.0f).onComplete += FinishRespawn;
 	}
 
 	private void FinishRespawn()
 	{
-		isDead = false;
-
-		transform.DOScale(0.1f, 0.5f);
+		transform.DOScale(0.1f, 0.5f).onComplete += FinishRespawnScale;
 		
 		var shellController = Shell.GetComponent<ShellController>();
 		shellController.SetAttachedToTurtle(DefaultShellPivot, FinishEquipShell);
 		this.shellController = shellController;
+	}
+
+	private void FinishRespawnScale()
+	{
+		rigidBody.simulated = true;
+		
+		isDead = false;
 	}
 
 	void OnTriggerExit2D(Collider2D other)
@@ -308,7 +317,15 @@ public class CharacterController2D : MonoBehaviour
 	{
 		if (IsGrounded())
 		{
-			return;
+			if (!isJump)
+			{
+				m_Movement.y = 0f;
+				return;
+			}
+		}
+		else
+		{
+			isJump = false;	
 		}
 
 		if (IsDead())
@@ -316,12 +333,21 @@ public class CharacterController2D : MonoBehaviour
 			m_Movement = Vector2.zero;
 			return;
 		}
+		
 		var increment = Gravity * Time.fixedDeltaTime;
 		m_Movement += Vector2.down * increment;
+		m_Movement.y = Mathf.Max(-9.81f, m_Movement.y);
 	}
 	
 	private void FixedUpdate()
 	{
+		if (IsDead())
+		{
+			m_Movement = Vector2.zero;
+			m_NextMovement = Vector2.zero;
+			return;
+		}
+		
 		var nowGrounded = IsGrounded();
 		if (grounded != nowGrounded)
 		{
@@ -331,13 +357,15 @@ public class CharacterController2D : MonoBehaviour
 		}
 		
 		ApplyGravity();
-		
+				
 		Move(m_Movement);
 		
 		m_PreviousPosition = rigidBody.position;
 		m_CurrentPosition = m_PreviousPosition + m_NextMovement;
 		Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.fixedDeltaTime;
 
+		Debug.Log(string.Format("{0}, {1}, {2}, {3}", m_Movement, transform.position, Velocity, m_CurrentPosition));
+		
 		rigidBody.MovePosition(m_CurrentPosition);
 		m_NextMovement = Vector2.zero;
 	}

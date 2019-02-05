@@ -31,6 +31,11 @@ namespace DefaultNamespace
 
         private int iterator = 0;
 
+        void Start()
+        {
+            instance = this;
+        }
+
         public Transform PlaySound(string soundName)
         {
             if (sources == null)
