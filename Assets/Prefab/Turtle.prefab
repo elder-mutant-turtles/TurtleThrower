@@ -52,10 +52,10 @@ GameObject:
   - component: {fileID: 4098441938806934}
   - component: {fileID: 95629471089735460}
   - component: {fileID: 50090546082803334}
-  - component: {fileID: 70047348228209090}
   - component: {fileID: 114837036010989968}
   - component: {fileID: 114015676662968948}
   - component: {fileID: 114111500278162434}
+  - component: {fileID: 61797310525956350}
   m_Layer: 8
   m_Name: Turtle
   m_TagString: Untagged
@@ -334,8 +334,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &70047348228209090
-CapsuleCollider2D:
+--- !u!61 &61797310525956350
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -346,9 +346,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.22846669, y: 3.6571336}
-  m_Size: {x: 6.088653, y: 12}
-  m_Direction: 0
+  m_Offset: {x: -1.0810385, y: 3.7420254}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.3198795, y: 12.80817}
+  m_EdgeRadius: 0
 --- !u!95 &95629471089735460
 Animator:
   serializedVersion: 3
@@ -406,7 +416,7 @@ MonoBehaviour:
   DefaultThrowForce: 6
   Animator: {fileID: 95629471089735460}
   WalkVelocity: 5
-  JumpHeight: 8
+  JumpHeight: 10
   Gravity: 20
   MovementAcceleration: 100
   Shell: {fileID: 0}

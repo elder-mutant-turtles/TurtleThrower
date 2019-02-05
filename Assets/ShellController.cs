@@ -18,9 +18,13 @@ namespace TurtleThrower
 
 	    public float Velocity;
 	    private Vector3 lastPosition;
+
+	    private int groundLayer;
 	
 	    private void Awake()
 	    {
+		    groundLayer = LayerMask.NameToLayer("Ground");
+		    
 		    if (rb == null)
 		    {
 			    rb = GetComponent<Rigidbody2D>();    
@@ -60,7 +64,6 @@ namespace TurtleThrower
 		    rb.velocity = direction * force;
 		    rb.AddTorque(-0.01f, ForceMode2D.Impulse);
 	    }
-
 
 	    /// <summary>
 	    /// When the shell is attached to turtle, rigidbody, colliders and physics must be disabled.

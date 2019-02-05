@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterInput : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class CharacterInput : MonoBehaviour
 	private const string BUTTON_1 = "j1a1";
 	private const string BUTTON_0 = "j1a0";
 	private const string BUTTON_5 = "j1a5";
+	private const string BUTTON_2 = "j1a2";
+	private const string BUTTON_3 = "j1a3";
+	private const string BUTTON_4 = "j1a4";
 	private const string KEY_UP = "up";
 	private const string KEY_RIGHT = "right";
 	private const string KEY_LEFT = "left";
@@ -53,6 +57,11 @@ public class CharacterInput : MonoBehaviour
 		{
 			controller.Throw();
 		}
+
+		if (ResetCode())
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
 	}
 
 	private void FixedUpdate()
@@ -86,6 +95,12 @@ public class CharacterInput : MonoBehaviour
 	private bool AimInputUp()
 	{
 		return Input.GetButtonUp(BUTTON_5) || Input.GetKeyUp(KEY_UP);
+	}
+
+	private bool ResetCode()
+	{
+		return Input.GetButton(BUTTON_2) && Input.GetButton(BUTTON_3) && Input.GetButton(BUTTON_4) &&
+		       HorizontalAxisMove() < -0.7f;
 	}
 
 	private float HorizontalAxisMove()

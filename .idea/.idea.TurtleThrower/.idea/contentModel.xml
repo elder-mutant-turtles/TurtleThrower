@@ -187,6 +187,7 @@
         <e p="Water.shader" t="Include" />
       </e>
       <e p="Assets/ShellController.cs" t="Include" />
+      <e p="Assets/SkipCutSceneScript.cs" t="Include" />
       <e p="Assets/SoundAnimator.cs" t="Include" />
       <e p="Assets/SoundManager.cs" t="Include" />
       <e p="Assets/SplashScreenManager.cs" t="Include" />
@@ -216,6 +217,7 @@
       </e>
       <e p="TurtleThrower.sln" t="IncludeFlat" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_TurtleThrower.-992136136.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_TurtleThrower.375847605.00" t="ExcludeRecursive" />
   </component>
 </project>

@@ -15,6 +15,9 @@ public class NewItemScreen : MonoBehaviour
 
 	private bool shown = false;
 
+	private float timer = 0f;
+	private float closeTimeout = 2f;
+
 	public void ShowNewItem(CollectableItem item)
 	{
 		var memento = item.GetComponentInChildren<MementoScript>();
@@ -38,6 +41,8 @@ public class NewItemScreen : MonoBehaviour
 		Time.timeScale = 0f;
 
 		shown = true;
+
+		timer = 0;
 	}
 
 	private void Hide()
@@ -51,7 +56,9 @@ public class NewItemScreen : MonoBehaviour
 
 	private void Update()
 	{
-		if (shown && Input.anyKey)
+		timer += Time.unscaledDeltaTime;
+		
+		if (timer > closeTimeout && shown && Input.anyKey)
 		{
 			Hide();
 			shown = false;
