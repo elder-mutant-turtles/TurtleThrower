@@ -364,7 +364,7 @@ public class CharacterController2D : MonoBehaviour
 		m_CurrentPosition = m_PreviousPosition + m_NextMovement;
 		Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.fixedDeltaTime;
 
-		Debug.Log(string.Format("{0}, {1}, {2}, {3}", m_Movement, transform.position, Velocity, m_CurrentPosition));
+		//Debug.Log(string.Format("{0}, {1}, {2}, {3}", m_Movement, transform.position, Velocity, m_CurrentPosition));
 		
 		rigidBody.MovePosition(m_CurrentPosition);
 		m_NextMovement = Vector2.zero;
